@@ -272,7 +272,7 @@ h1, h2, h3, h4, h5, h6 {
 #hero {
   width: 100%;
   height: 120vh;
-  background: url("../../jimg/robotCoverPhoto.jpeg") top right no-repeat;
+  background: url("../../jimg/robotCoverPhoto.jpeg") top  no-repeat;
   background-size: cover;
   position: relative;
 }
