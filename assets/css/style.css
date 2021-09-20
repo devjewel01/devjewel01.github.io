@@ -271,21 +271,22 @@ h1, h2, h3, h4, h5, h6 {
 
 #hero {
   width: 100%;
-  height: 120vh;
-  background: url("../../jimg/robotCoverPhoto.jpeg") top  no-repeat;
+  height: 150vh;
+  background: url("../../jimg/cover.png") top  no-repeat;
   background-size: cover;
   position: relative;
 }
 
 @media (min-width: 992px) {
-  #hero {
+  #hero 
+  {
     padding-left: 160px;
   }
 }
 
 #hero:before {
   content: "";
-  background: rgba(255, 255, 255, 0.8);
+  background: rgba(255, 255, 255, 0.7);
   position: absolute;
   bottom: 0;
   top: 0;
