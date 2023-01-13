@@ -1,3 +1,3 @@
-# It's my website.
+# It's my personal website.
 
-link - [devjewel](https://devjewel01.github.io/)
+website link - [devjewel](https://jewelnath.me/)
