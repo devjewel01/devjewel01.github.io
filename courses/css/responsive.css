@@ -1,0 +1,617 @@
+
+
+/*--------------------------------------------------------------------- File Name: responsive.css ---------------------------------------------------------------------*/
+
+
+/*------------------------------------------------------------------- 991px x 768px ---------------------------------------------------------------------*/
+
+@media only screen and (min-width: 768px) and (max-width: 991px) {
+    .header-search {
+        padding: 15px 0px;
+    }
+}
+
+
+/*------------------------------------------------------------------- 767px x 599px ---------------------------------------------------------------------*/
+
+@media only screen and (min-width: 599px) and (max-width: 767px) {
+    .logo {
+        text-align: center;
+    }
+    .cart-content-right {
+        padding-bottom: 5px;
+    }
+    .mg {
+        margin: 0px 0px;
+    }
+    .menu-area-main {
+        height: 256px;
+        overflow-y: auto;
+    }
+    .megamenu>.row [class*="col-"] {
+        padding: 0px;
+    }
+    .menu-area-main .megamenu .men-cat {
+        padding: 0px 15px;
+    }
+    .menu-area-main .megamenu .women-cat {
+        padding: 0px 15px;
+    }
+    .menu-area-main .megamenu .el-cat {
+        padding: 0px 15px;
+    }
+    .mean-container .mean-nav ul li a.mean-expand {
+        height: 19px;
+    }
+    .category-box.women-box {
+        display: none;
+    }
+    .cart-box {
+        display: inline-block;
+        margin: 0px 30px;
+    }
+    .wish-box {
+        float: none;
+        margin: 0px 30px;
+        display: inline-block;
+    }
+    .menu-add {
+        display: none;
+    }
+    .category-box {
+        display: none;
+    }
+    .mean-container .mean-nav ul li ol {
+        padding: 0px;
+    }
+    .mean-container .mean-nav ul li a {
+        padding: 10px 20px;
+        width: 94.8%;
+    }
+    .mean-container .mean-nav ul li li a {
+        width: 92%;
+        padding: 1em 4%;
+    }
+    .mean-container .mean-nav ul li li li a {
+        width: 100%;
+    }
+    .header-search {
+        padding: 15px 0px;
+    }
+    #collapseFilter.d-md-block {
+        padding: 30px 0px;
+    }
+}
+
+
+/*------------------------------------------------------------------- 599px x 280px ---------------------------------------------------------------------*/
+
+@media only screen and (min-width: 280px) and (max-width: 599px) {
+    .cart-content-right {
+        padding-bottom: 5px;
+    }
+    .megamenu>.row [class*="col-"] {
+        padding: 0px;
+    }
+    .menu-area-main .megamenu .men-cat {
+        padding: 0px 15px;
+    }
+    .menu-area-main .megamenu .women-cat {
+        padding: 0px 15px;
+    }
+    .menu-area-main .megamenu .el-cat {
+        padding: 0px 15px;
+    }
+    .mean-container .mean-nav ul li a {
+        padding: 1em 4%;
+        width: 92%;
+    }
+    .mean-container .mean-nav ul li li a {
+        width: 90%;
+        padding: 1em 5%;
+    }
+    .mean-container .sub-full.megamenu-categories ol li a {
+        padding: 5px 0px;
+        text-transform: capitalize;
+        width: 100%;
+    }
+    .megamenu .sub-full.megamenu-categories .women-box .banner-up-text a {
+        width: auto;
+        border: none;
+        float: none;
+    }
+    .menu-area-main {
+        height: 45px;
+        overflow-y: auto;
+    }
+    .mean-container .mean-nav ul li a.mean-expand {
+        top: 0;
+    }
+}
+
+@media (min-width: 992px) and (max-width: 1199px) {
+    .header_section{
+        background-size: cover;
+    }
+    .logo {
+        width: 21%;
+    }
+    .navbar-expand-lg .navbar-nav .nav-link {
+        padding-left: 10px;
+    }
+    .banner_taital {
+        font-size: 44px;
+    }
+    .about_bt {
+        width: 150px;
+    }
+    .quote_bt {
+        width: 150px;
+    }
+    #my_slider a.carousel-control-prev {
+        left: 400px;
+        top: 70%;
+    }
+    #my_slider a.carousel-control-next {
+        right: 450px;
+        top: 70%;
+    }
+    .news_section{
+        padding-top: 30px;
+    }
+    .news_taital_box {
+        padding: 30px;
+        margin-top: 3px;
+    }
+    .image_6 {
+        height: 285px;
+    }
+    .plus_text{
+        bottom: 120px;
+    }
+    .classes_text {
+        font-size: 26px;
+        padding-top: 65px;
+    }
+    .client_name{
+        padding-top: 110px;
+    }
+    .client_section_2 {
+        width: 100%;
+    }
+    .client_left {
+        padding: 50px 0px 0px 0px;
+    }
+    .client_right {
+        padding: 25px 0px 0px 40px;
+    }
+    #main_slider a.carousel-control-prev {
+        left: -65px;
+        top: 60%;
+    }
+    #main_slider a.carousel-control-next {
+        right: -65px;
+        top: 60%;
+    }
+    .contact_taital {
+        width: 62%;
+        margin: 0 auto;
+        float: initial;
+    }
+    .contact_img {
+        width: 100%;
+        height: 358px;
+        background-size: 100%;
+        padding: 50px 60px;
+    }
+
+    .map_main {
+        padding-top: 50px;
+    }
+
+    .email_text {
+        width: 60%;
+    }
+    .margin_top {
+        margin-top: 60px;
+    }
+    .footer_section_2{
+        margin-top: 50px;
+    }
+
+    .footer_menu li{
+        padding: 6px 0px;
+    }
+    .footer_logo {
+        padding: 112px 0px;
+    }
+    .many_text {
+    width: 100%;
+    margin-left: 0px;
+    line-height: 30px;
+}
+.call_text{
+    font-size: 14px;
+}
+
+
+}
+
+@media (min-width: 768px) and (max-width: 991px) {
+    .header_section{
+        background-size: cover;
+    }
+    .logo {
+        width: 40%;
+    }
+    .banner_taital {
+        font-size: 33px;
+    }
+    .about_bt {
+        width: 150px;
+    }
+    .quote_bt {
+        width: 150px;
+    }
+    #my_slider a.carousel-control-prev {
+        left: 400px;
+        top: 70%;
+    }
+    #my_slider a.carousel-control-next {
+        right: 230px;
+        top: 70%;
+    }
+    .news_section{
+        padding-top: 30px;
+    }
+    .news_taital_box {
+        padding: 10px;
+        margin-top: 0px;
+    }
+    .image_6 {
+        height: 285px;
+    }
+    .plus_text{
+        bottom: 120px;
+    }
+    .classes_text {
+        font-size: 26px;
+        padding-top: 10px;
+        padding-top: 0px;
+    }
+    .client_section_2 {
+        width: 100%;
+    }
+    .client_left {
+        padding: 50px 0px 0px 0px;
+    }
+    .client_right {
+        padding: 25px 0px 0px 40px;
+    }
+    #main_slider a.carousel-control-prev {
+        left: -65px;
+        top: 60%;
+    }
+    #main_slider a.carousel-control-next {
+        right: -65px;
+        top: 60%;
+    }
+    .contact_taital {
+        width: 100%;
+        margin: 0 auto;
+        float: initial;
+    }
+    .contact_img {
+        width: 100%;
+        height: 275px;
+        background-size: 100%;
+        padding: 10px 60px;
+    }
+    .map_main {
+        padding-top: 50px;
+    }
+    .subscribe_bt {
+        width: 300px;
+    }
+    .email_text {
+        width: 55%;
+    }
+    .margin_top {
+        margin-top: 0px;
+    }
+    .footer_section_2{
+        margin-top: 50px;
+    }
+    .information_main{
+        border: 0px;
+        padding: 0px; 
+    }
+    .footer_menu li{
+        padding: 0px;
+    }
+    .footer_logo {
+        padding: 74px 0px;
+    }
+    .many_text {
+    width: 100%;
+    margin-left: 0px;
+    line-height: 30px;
+}
+
+}
+
+@media (min-width: 576px) and (max-width: 767px) {
+    #my_slider a.carousel-control-prev {
+        display: none;
+    }
+    #my_slider a.carousel-control-next {
+        display: none;
+    }
+    .header_section{
+        background-size: cover;
+    }
+    .logo {
+        width: 40%;
+    }
+    .banner_taital {
+        font-size: 40px;
+    }
+    .about_bt {
+        width: 170px;
+    }
+    .quote_bt {
+        width: 170px;
+    }
+    .image_1 {
+        padding: 20px 0px 0px 0px;
+    }
+    .news_section{
+        padding-top: 0px;
+    }
+    .news_section_2{
+        padding-top: 0px;
+    }
+    .news_taital_box {
+        padding: 10px;
+    }
+    .plus_text{
+        display: none;
+    }
+    .image_6{
+        padding-top: 30px;
+    }
+    .news_taital {
+        font-size: 30px;
+    }
+    .classes_text {
+        font-size: 20px;
+        padding-top: 20px;
+    }
+    .client_section {
+        padding: 40px 0px;
+    }
+    .client_section_2{
+        display: initial;
+    }
+    .client_left {
+        width: 100%;
+        padding: 0px;
+    }
+    .client_right {
+        width: 100%;
+        padding: 0px;
+    }
+    #main_slider a.carousel-control-prev{
+        display: none;
+    }
+    #main_slider a.carousel-control-next{
+        display: none;
+    }
+    .client_text{
+        font-size: 15px;
+    }
+    .newsletter_main{
+        display: flex;
+    }
+    .newsletter_taital {
+        font-size: 28px;
+    }
+    .get_quote_bt {
+        width: 290px;
+        margin-top: 13px;
+    }
+    .blog_section.row{
+        flex-direction: column-reverse;
+    }
+    .dolor_text{
+        font-size: 15px;
+    }
+    .padding_left0 {
+        padding-left: 15px;
+    }
+    .contact_taital {
+        width: 40%;
+        font-size: 30px;
+        text-align: center;
+        margin-right: 0px;
+        margin: 0 auto;
+        float: initial;
+    }
+    .contact_img {
+        width: 100%;
+        height: 430px;
+        padding: 100px 60px;
+        background-size: cover;
+    }
+    .map_main {
+        padding: 40px 0px;
+    }
+    .subscribe_bt {
+        width: 288px;
+    }
+    .email_text {
+        width: 100%;
+        float: left;
+        width: 100%;
+        margin-top: 30px;
+    }
+    .margin_top {
+        margin-top: 0px;
+    }
+    .footer_section_2{
+        margin-top: 30px;
+    }
+    .information_main {
+        border-left: 0;
+        padding-left: 0;
+        margin-top: 30px;
+    }
+    .footer_menu li{
+        padding: 0px;
+    }
+    .footer_logo {
+        padding: 0px 0px;
+    }
+    .copyright_text {
+        font-size: 19px;
+    }
+}
+
+@media (max-width: 575px) {
+    #my_slider a.carousel-control-prev {
+        display: none;
+    }
+    #my_slider a.carousel-control-next {
+        display: none;
+    }
+    .header_section{
+        background-size: cover;
+    }
+    .logo {
+        width: 40%;
+    }
+    .banner_taital {
+        font-size: 29px;
+    }
+    .about_bt {
+        width: 137px;
+    }
+    .quote_bt {
+        width: 137px;
+    }
+    .image_1 {
+        padding: 20px 0px 0px 0px;
+    }
+    .news_section{
+        padding-top: 0px;
+    }
+    .news_section_2{
+        padding-top: 0px;
+    }
+    .news_taital_box {
+        padding: 10px;
+    }
+    .plus_text{
+        display: none;
+    }
+    .image_6{
+        padding-top: 30px;
+    }
+    .news_taital {
+        font-size: 30px;
+    }
+    .blog_section.row{
+        flex-direction: column-reverse;
+    }
+    .classes_text {
+        font-size: 20px;
+        padding-top: 20px;
+    }
+    .client_section {
+        padding: 40px 0px;
+    }
+    .client_section_2{
+        display: initial;
+    }
+    .client_left {
+        width: 100%;
+        padding: 0px;
+    }
+    .client_right {
+        width: 100%;
+        padding: 0px;
+    }
+    #main_slider a.carousel-control-prev{
+        display: none;
+    }
+    #main_slider a.carousel-control-next{
+        display: none;
+    }
+    .client_text{
+        font-size: 15px;
+    }
+    .newsletter_main{
+        display: initial;
+    }
+    .newsletter_taital {
+        font-size: 28px;
+    }
+    .get_quote_bt {
+        width: 290px;
+    }
+    .dolor_text{
+        font-size: 15px;
+    }
+    .padding_left0 {
+        padding-left: 15px;
+    }
+    .contact_taital {
+        width: 100%;
+        font-size: 30px;
+        text-align: center;
+        margin-right: 0px;
+    }
+    .contact_img {
+        width: 100%;
+        height: 430px;
+        padding: 100px 60px;
+        background-size: cover;
+    }
+    .map_main {
+        padding: 40px 0px;
+    }
+    .subscribe_bt {
+        width: 288px;
+    }
+    .email_text {
+        width: 100%;
+        float: left;
+        width: 100%;
+        margin-top: 30px;
+    }
+    .margin_top {
+        margin-top: 0px;
+    }
+    .footer_section_2{
+        margin-top: 30px;
+    }
+    .information_main {
+        border-left: 0;
+        padding-left: 0;
+        margin-top: 30px;
+    }
+    .footer_menu li{
+        padding: 0px;
+    }
+    .footer_logo {
+        padding: 0px 0px;
+    }
+    .copyright_text {
+        font-size: 19px;
+    }
+
+
+
+
+}
+

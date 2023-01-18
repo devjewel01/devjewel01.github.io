@@ -1,0 +1,312 @@
+:root {
+  --color-primary: #222f3e;
+  --color-secondary: #576574;
+}
+
+*,
+*::before,
+*::after {
+  padding: 0;
+  margin: 0;
+  box-sizing: inherit;
+  list-style: none;
+  text-decoration: none;
+}
+
+html {
+  box-sizing: border-box;
+  font-size: 62.5%;
+}
+@media only screen and (max-width: 62.5em) {
+  html {
+    font-size: 50%;
+  }
+}
+
+body {
+  font-family: "Nunito", sans-serif;
+  color: #6d5d4b;
+  font-weight: 300;
+  line-height: 1.6;
+}
+
+/* heading */
+.heading-secondary {
+  color: var(--color-secondary);
+  font-weight: bold;
+  font-size: 4rem;
+}
+
+.heading-secondary::after {
+  content: "";
+  width: 20rem;
+  height: 0.3rem;
+  background-color: var(--color-secondary);
+  display: block;
+  margin: 0.5rem auto;
+}
+
+.heading-tertiary {
+  color: var(--color-secondary);
+  font-weight: bold;
+  font-size: 3rem;
+}
+
+.heading-tertiary::after {
+  content: "";
+  width: 15rem;
+  height: 0.3rem;
+  background-color: var(--color-secondary);
+  display: block;
+  margin: 0.5rem auto;
+}
+
+.heading-sm {
+  color: var(--color-secondary);
+  font-weight: bold;
+  font-size: 2.5rem;
+}
+
+/* button */
+.btn-round {
+  font-weight: bold;
+  font-size: 2rem;
+  margin-bottom: 1rem;
+}
+
+.btn-class {
+  font-weight: bold;
+  font-size: 1.3rem;
+  margin-bottom: 1rem;
+}
+
+/* navbar */
+.nav {
+  background-color: var(--color-primary);
+  color: #fff;
+  padding: 1rem 0;
+
+  display: flex;
+  justify-content: space-between;
+}
+
+.logo {
+  height: 5rem;
+  width: 5rem;
+  border-radius: 50%;
+}
+
+.nav-bar {
+  list-style: none;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: flex-end;
+  align-items: center;
+}
+@media only screen and (max-width: 36em) {
+  .nav-bar {
+    justify-content: center;
+    margin-top: 2rem;
+  }
+}
+
+.nav-bar__item {
+  margin: 0 2rem;
+}
+@media only screen and (max-width: 62.5em) {
+  .nav-bar__item {
+    margin: 0 1.5rem;
+  }
+}
+@media only screen and (max-width: 36em) {
+  .nav-bar__item {
+    margin: 0 .5rem;
+    margin-bottom: 1.5rem;
+  }
+}
+
+.nav-bar__item--link:link,
+.nav-bar__item--link:visited {
+  text-decoration: none;
+  font-size: 2rem;
+  color: #fff;
+  padding: 0.5rem 1rem;
+
+  border-radius: 1rem;
+  border: 2px solid #fff;
+
+  transition: 0.2s ease-in;
+}
+@media only screen and (max-width: 36em) {
+  .nav-bar__item--link:link,
+.nav-bar__item--link:visited {
+    font-size: 1.6rem;
+    font-weight: 700;
+    padding: 0.5rem .5rem;
+  }
+}
+
+.nav-bar__item--link:hover,
+.nav-bar__item--link:active {
+  background-color: #fff;
+  color: var(--color-primary);
+  border-radius: 1rem;
+}
+
+.active:link,
+.active:visited {
+  background-color: #fff;
+  color: var(--color-primary);
+  border-radius: 1rem;
+}
+
+/* mobile menu */
+.menu {
+  cursor: pointer;
+  position: relative;
+  padding: 1rem 1rem;
+  background-color: var(--color-primary);
+}
+
+.menu-icon {
+  background-color: #fff;
+  width: 3rem;
+  height: 3px;
+  position: relative;
+}
+
+.menu-icon::after {
+  content: "";
+  display: block;
+  background-color: #fff;
+  width: 3rem;
+  height: 3px;
+  position: absolute;
+  top: 1rem;
+}
+
+.menu-icon::before {
+  content: "";
+  display: block;
+  background-color: #fff;
+  width: 3rem;
+  height: 3px;
+  position: absolute;
+  top: -1rem;
+}
+
+/* homepage main */
+.main {
+  margin-top: 10rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+/* card */
+.card {
+  max-width: 800px;
+  color: var(--color-primary);
+}
+
+@media only screen and (max-width: 42.5em) {
+  .card {
+    max-width: 600px;
+  }
+}
+@media only screen and (max-width: 36em) {
+  .card {
+    max-width: 400px;
+  }
+}
+
+.card-header {
+  font-size: 2rem;
+  font-weight: bold;
+  color: var(--color-primary);
+}
+
+.card-body {
+  padding: 2rem 3rem;
+}
+
+/* .card-title {
+  font-size: 2rem;
+} */
+
+.card-text {
+  font-size: 1.6rem;
+  list-style: none;
+
+  width: 100%;
+}
+
+.card-image {
+  height: 100%;
+  width: 100%;
+}
+
+.card-image-top {
+  width: 100%;
+}
+
+/* comments */
+.comments {
+  margin: 10rem 0;
+}
+
+/* sponsors */
+.sponsors {
+  margin: 5rem 0;
+}
+
+.sponsors-body {
+  margin-bottom: 5rem;
+}
+
+@media only screen and (max-width: 42.5em) {
+  .sponsor-image {
+    max-width: 250px;
+  }
+}
+
+/* footer */
+.footer {
+  background-color: var(--color-primary);
+  color: #fff;
+  padding: 5rem 0;
+}
+
+/* ====================================
+Start Course  Page
+==================================== */
+.round-and-class {
+  min-height: 65vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin: 3rem 0;
+}
+
+/* ====================================
+Round ===> class
+==================================== */
+.round-class--text {
+  font-size: 2rem;
+}
+
+
+/* ====================================
+Schools
+==================================== */
+
+.school-lists {
+  min-height: 70vh;
+}
+
+.list-group-item {
+  font-size: 1.6rem;
+  color: var(--color-primary);
+  font-weight: 700;
+}
