@@ -16,7 +16,7 @@ const Index = () => {
         <div className="mt-16 mx-auto grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 lg:gap-6">
           {courses.map((item, index) => (
             <motion.div key={item.id} variants={fadeIn("up", "spring", index * 0.5, 0.75)}>
-              <Link to={`/lab/course/${item.id}`}>
+              <Link to={item.link} className="block">
                 <Tilt
                   options={{
                     max: 45,
