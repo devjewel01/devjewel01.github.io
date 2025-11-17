@@ -9,7 +9,16 @@ import Feedbacks from './Feedbacks';
 import Contact from './Contact';
 import Lab from "./Lab";
 
+// New Blueprint/Terminal Theme Components
+import TerminalNavbar from './TerminalNavbar';
+import HeroBento from './HeroBento';
+import ProjectsBlueprint from './ProjectsBlueprint';
+import TechTerminal from './TechTerminal';
+import ContactTerminal from './ContactTerminal';
+import RobotSVG from './RobotSVG';
+
 export {
+  // Old components (kept for reference)
   Hero,
   Navbar,
   About,
@@ -18,7 +27,15 @@ export {
   Projects,
   Feedbacks,
   Contact,
-  ComputersCanvas, 
+  ComputersCanvas,
   BinaryCanvas,
   Lab,
+
+  // New Blueprint/Terminal Theme Components
+  TerminalNavbar,
+  HeroBento,
+  ProjectsBlueprint,
+  TechTerminal,
+  ContactTerminal,
+  RobotSVG,
 }

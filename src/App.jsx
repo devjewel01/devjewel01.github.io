@@ -1,29 +1,48 @@
 import { BrowserRouter } from "react-router-dom";
-import { About, Contact, Experience, Feedbacks, Hero, Navbar, Tech, Projects, BinaryCanvas, Lab } from "./components";
+import {
+  // New Blueprint/Terminal Theme Components
+  TerminalNavbar,
+  HeroBento,
+  ProjectsBlueprint,
+  TechTerminal,
+  ContactTerminal,
+  // Keeping Experience, Feedbacks, and Lab from original
+  Experience,
+  Feedbacks,
+  Lab,
+} from "./components";
 
 const App = () => {
   return (
-    // <BrowserRouter>
-      <div className='relative z-0 bg-primary'>
-        <div className='bg-hero-pattern bg-cover bg-no-repeat bg-center'>
-          <Navbar />
-          <Hero /> 
-        </div>
-        <About />
-        <Projects />
-        <div className='relative z-0'>
-          <Lab/>
-          {/* <BinaryCanvas /> */}
-        </div>
-        
-        <Tech />
-        <Experience />
-        <Feedbacks />
-        <div className='relative z-0'>
-          <Contact />
-          {/* <BinaryCanvas /> */}
-        </div>
+    <div className='relative z-0 bg-primary blueprint-bg'>
+      {/* New Terminal Navbar */}
+      <TerminalNavbar />
+
+      {/* New Hero with Bento Grid Layout */}
+      <HeroBento />
+
+      {/* New Blueprint-style Projects */}
+      <ProjectsBlueprint />
+
+      {/* Lab Section (keeping from original) */}
+      <div className='relative z-0'>
+        <Lab />
       </div>
+
+      {/* New Terminal-style Tech/Skills */}
+      <TechTerminal />
+
+      {/* Experience (keeping from original) */}
+      <Experience />
+
+      {/* Testimonials (keeping from original) */}
+      <Feedbacks />
+
+      {/* New Terminal-style Contact */}
+      <div className='relative z-0'>
+        <ContactTerminal />
+      </div>
+    </div>
   );
 }
 
