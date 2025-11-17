@@ -1,4 +1,4 @@
-@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800;900&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Fira+Code:wght@300;400;500;600;700&family=Inter:wght@300;400;500;600;700;800;900&display=swap");
 
 @tailwind base;
 @tailwind components;
@@ -8,7 +8,7 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  font-family: "Poppins", sans-serif;
+  font-family: "Inter", system-ui, sans-serif;
   scroll-behavior: smooth;
   color-scheme: dark;
 }
@@ -201,4 +201,126 @@
       -1.8em 1.8em 0 0em rgba(255, 255, 255, 0.5),
       -2.6em 0em 0 0em rgba(255, 255, 255, 0.7), -1.8em -1.8em 0 0em #ffffff;
   }
+}
+
+/* Blueprint/Terminal Theme Styles */
+
+/* Blueprint grid background */
+.blueprint-bg {
+  background-color: #0D1117;
+  background-image:
+    linear-gradient(rgba(5, 191, 219, 0.05) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(5, 191, 219, 0.05) 1px, transparent 1px);
+  background-size: 20px 20px;
+}
+
+/* Blueprint corners - decorative tech corners */
+.blueprint-corners {
+  position: relative;
+}
+
+.blueprint-corners::before,
+.blueprint-corners::after {
+  content: '';
+  position: absolute;
+  width: 20px;
+  height: 20px;
+  border: 2px solid #05BFDB;
+}
+
+.blueprint-corners::before {
+  top: 0;
+  left: 0;
+  border-right: none;
+  border-bottom: none;
+}
+
+.blueprint-corners::after {
+  top: 0;
+  right: 0;
+  border-left: none;
+  border-bottom: none;
+}
+
+/* Terminal window styling */
+.terminal-window {
+  background: #161B22;
+  border: 1px solid #30363D;
+  border-radius: 8px;
+  box-shadow: 0 0 20px rgba(5, 191, 219, 0.1);
+}
+
+.terminal-header {
+  background: #0D1117;
+  padding: 8px 12px;
+  border-bottom: 1px solid #30363D;
+  border-radius: 8px 8px 0 0;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.terminal-dot {
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+}
+
+.terminal-dot.red { background: #FF5F56; }
+.terminal-dot.yellow { background: #FFBD2E; }
+.terminal-dot.green { background: #27C93F; }
+
+/* Terminal cursor */
+.terminal-cursor {
+  display: inline-block;
+  width: 8px;
+  height: 16px;
+  background: #00FF00;
+  animation: blink 1s step-end infinite;
+  margin-left: 2px;
+}
+
+/* Blueprint text with glow effect */
+.blueprint-text {
+  color: #05BFDB;
+  text-shadow: 0 0 10px rgba(5, 191, 219, 0.5);
+}
+
+/* Terminal text */
+.terminal-text {
+  color: #00FF00;
+  font-family: 'Fira Code', monospace;
+  text-shadow: 0 0 5px rgba(0, 255, 0, 0.3);
+}
+
+/* Scanline effect (subtle) */
+.scanline {
+  position: relative;
+  overflow: hidden;
+}
+
+.scanline::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 2px;
+  background: linear-gradient(transparent, rgba(5, 191, 219, 0.1), transparent);
+  animation: scan 8s linear infinite;
+  pointer-events: none;
+}
+
+/* Bento grid helpers */
+.bento-box {
+  border: 1px solid #30363D;
+  background: #161B22;
+  border-radius: 12px;
+  transition: all 0.3s ease;
+}
+
+.bento-box:hover {
+  border-color: #05BFDB;
+  box-shadow: 0 0 20px rgba(5, 191, 219, 0.2);
+  transform: translateY(-2px);
 }
