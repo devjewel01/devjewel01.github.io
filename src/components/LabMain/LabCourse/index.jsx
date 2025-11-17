@@ -1,4 +1,4 @@
-import Navbar from "../../Navbar"
+import TerminalNavbar from "../../TerminalNavbar"
 import { courseIntros } from "../../../constants/lab"
 import { useNavigate, useParams } from "react-router-dom"
 import python from "../../../constants/python"
@@ -21,7 +21,7 @@ const Index = () => {
 
   return (
     <>
-      <Navbar />
+      <TerminalNavbar />
       <div className="max-w-7xl mx-auto py-24">
         <h1 className="mb-4 text-4xl font-extrabold leading-none tracking-tight text-white text-center md:text-5xl lg:text-6xl">{courseIntro.title}</h1>
         <p className="mb-6 text-lg font-normal text-gray-200 text-center lg:text-xl sm:px-16 xl:px-48">{courseIntro.intro}</p>

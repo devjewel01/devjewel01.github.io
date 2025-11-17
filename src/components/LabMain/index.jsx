@@ -3,12 +3,12 @@ import { Link } from "react-router-dom"
 import { motion } from "framer-motion";
 import { Tilt } from "react-tilt";
 import { fadeIn } from "../../utils/motion";
-import Navbar from "../Navbar";
+import TerminalNavbar from "../TerminalNavbar";
 
 const Index = () => {
   return (
     <>
-      <Navbar />
+      <TerminalNavbar />
       <div className="max-w-7xl mx-auto py-24">
         <h1 className="mb-4 text-4xl font-extrabold leading-none tracking-tight text-white text-center md:text-5xl lg:text-6xl">Welcome to {`Jewel's`} Lab.</h1>
         <p className="mb-6 text-lg font-normal text-gray-200 text-center lg:text-xl sm:px-16 xl:px-48">Explore to get something exciting.</p>
