@@ -1,15 +1,4 @@
-import {ComputersCanvas, BinaryCanvas } from './canvas';
-import Hero from './Hero';
-import Navbar from './Navbar';
-import About from './About';
-import Tech from './Tech';
-import Experience from './Experience';
-import Projects from './Projects';
-import Feedbacks from './Feedbacks';
-import Contact from './Contact';
-import Lab from "./Lab";
-
-// New Blueprint/Terminal Theme Components
+// Blueprint/Terminal Theme Components
 import TerminalNavbar from './TerminalNavbar';
 import HeroBento from './HeroBento';
 import ProjectsBlueprint from './ProjectsBlueprint';
@@ -17,20 +6,12 @@ import TechTerminal from './TechTerminal';
 import ContactTerminal from './ContactTerminal';
 import RobotSVG from './RobotSVG';
 
-export {
-  // Old components (kept for reference)
-  Hero,
-  Navbar,
-  About,
-  Tech,
-  Experience,
-  Projects,
-  Feedbacks,
-  Contact,
-  ComputersCanvas,
-  BinaryCanvas,
-  Lab,
+// Existing components still in use
+import Experience from './Experience';
+import Feedbacks from './Feedbacks';
+import Lab from "./Lab";
 
+export {
   // New Blueprint/Terminal Theme Components
   TerminalNavbar,
   HeroBento,
@@ -38,4 +19,9 @@ export {
   TechTerminal,
   ContactTerminal,
   RobotSVG,
+
+  // Existing components
+  Experience,
+  Feedbacks,
+  Lab,
 }
