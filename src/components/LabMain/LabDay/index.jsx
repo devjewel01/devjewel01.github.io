@@ -1,4 +1,4 @@
-import Navbar from "../../Navbar";
+import TerminalNavbar from "../../TerminalNavbar";
 import python from "../../../constants/python";
 import { useParams } from "react-router-dom";
 import Code from "../../blog/Code";
@@ -25,7 +25,7 @@ const Index = () => {
 
   return (
     <>
-      <Navbar />
+      <TerminalNavbar />
       <div className="max-w-7xl mx-auto py-24">
         <h1 className="mb-4 text-3xl font-extrabold leading-none tracking-tight text-white text-center md:text-5xl lg:text-6xl">{day.title}</h1>
         <div className="max-w-3xl mx-auto px-5">
