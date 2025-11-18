@@ -1,4 +1,3 @@
-import { BrowserRouter } from "react-router-dom";
 import {
   // Blueprint/Terminal Theme Components
   TerminalNavbar,
