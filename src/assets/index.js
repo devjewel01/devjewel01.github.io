@@ -38,10 +38,8 @@ import cpp from "./tech/cpp.png";
 import python from "./tech/python-logo.svg"
 import vscode from "./tech/vs-code.png"
 
-import CZS from "./company/CZS.png";
 import quanta_robotics from "./company/quanta-robotics-logo.png";
 import SoRC from "./company/SoRC.jpg";
-import BAPGHS from "./company/BAPGHS.jpeg";
 
 export {
   logo,
@@ -73,8 +71,6 @@ export {
   python,
   vscode,
 
-  CZS,
-  BAPGHS,
   quanta_robotics,
   SoRC,
 

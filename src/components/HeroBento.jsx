@@ -6,7 +6,7 @@ import RobotSVG from "./RobotSVG";
 const HeroBento = () => {
   const [displayText, setDisplayText] = useState("");
   const [currentIndex, setCurrentIndex] = useState(0);
-  const fullText = "Robotics Engineer & Software Developer";
+  const fullText = "Software Engineer (.NET) | Robotics Explorer";
 
   // Typing effect
   useEffect(() => {
@@ -105,13 +105,14 @@ const HeroBento = () => {
               <span className={styles.blueprintLabel}>About.md</span>
             </div>
             <p className="font-sans text-secondary text-sm md:text-base leading-relaxed">
-              I'm a robotics programmer with hands-on experience building robots like{" "}
-              <span className="text-blueprint-light font-semibold">Niko</span>,{" "}
-              <span className="text-blueprint-light font-semibold">Blueberry</span>, and{" "}
-              <span className="text-blueprint-light font-semibold">Sheena</span>.
-              As a trainer, I've taught{" "}
-              <span className="text-blueprint-light font-semibold">1000+ students</span>{" "}
-              robotics and programming, igniting their passion for technology.
+              A passionate Software Engineer (.NET) with a strong foundation in programming and robotics.
+              Currently working at{" "}
+              <span className="text-blueprint-light font-semibold">Orbitax</span>, where I build and enhance
+              .NET-based applications. Alongside my professional work, I actively explore robotics, IoT, and
+              automation projects — having successfully completed{" "}
+              <span className="text-blueprint-light font-semibold">three humanoid robotics prototypes</span>.
+              With deep enthusiasm for problem-solving and continuous learning, I aim to bridge the gap between
+              software development and intelligent robotics.
             </p>
           </motion.div>
 
@@ -132,16 +133,16 @@ const HeroBento = () => {
                 <span className="text-terminal-green">$</span> cat current_focus.txt
               </div>
               <div className="text-blueprint-light mt-3">
-                &gt; Machine Learning
+                &gt; .NET Development
               </div>
               <div className="text-blueprint-light">
-                &gt; Artificial Intelligence
+                &gt; Robotics & IoT
               </div>
               <div className="text-blueprint-light">
-                &gt; Robotics Development
+                &gt; ROS2 & Embedded Systems
               </div>
               <div className="text-blueprint-light">
-                &gt; Embedded Systems
+                &gt; Arduino & Raspberry Pi
               </div>
             </div>
           </motion.div>
