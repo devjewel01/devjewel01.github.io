@@ -1,19 +1,18 @@
 # Personal Portfolio
 
-A modern, interactive 3D portfolio website showcasing my work and experience.
+A modern, terminal-inspired portfolio website with sleek animations and blueprint aesthetics.
 
 ## Live Site
 
-Visit my portfolio at [jewelnath.me](https://jewelnath.me/)
+Visit my portfolio at [jewelnath.netlify.app](https://jewelnath.netlify.app/)
 
 ## About
 
-This is my personal portfolio website featuring an immersive 3D experience built with React and Three.js. The site includes interactive animations, smooth transitions, and a modern design to showcase my projects and skills.
+This is my personal portfolio website featuring a terminal/blueprint themed design with smooth floating animations. The site showcases my projects, experience, and skills in a clean, modern interface inspired by developer tools and command-line aesthetics.
 
 ## Tech Stack
 
 - **Frontend Framework:** React 18
-- **3D Graphics:** Three.js, React Three Fiber, React Three Drei
 - **Animations:** Framer Motion
 - **Styling:** Tailwind CSS, Styled Components
 - **Build Tool:** Vite
@@ -22,12 +21,17 @@ This is my personal portfolio website featuring an immersive 3D experience built
 
 ## Features
 
-- Interactive 3D visualizations and animations
+- Terminal-inspired UI with blueprint aesthetics
+- Floating SVG animations (robots, code symbols, chips, circuit nodes)
+- Typing effect animations
 - Responsive design for all devices
-- Smooth page transitions
-- Project showcase with detailed information
-- Contact form integration
-- Modern, minimal UI/UX
+- Smooth page transitions with Framer Motion
+- Bento grid hero layout
+- Blueprint-style project showcase
+- Terminal-style tech stack display
+- Interactive contact form
+- Experience timeline
+- Testimonials section
 
 ## Getting Started
 
@@ -71,11 +75,11 @@ Build the project for production:
 npm run build
 ```
 
-The built files will be in the `dist` directory, ready to be deployed to any static hosting service.
+The built files will be in the `dist` directory, ready to be deployed to Netlify or any static hosting service.
 
 ## Resume
 
-View my resume at [jewelnath.me/resume.pdf](https://jewelnath.me/resume.pdf)
+View my resume at [jewelnath.netlify.app/resume.pdf](https://jewelnath.netlify.app/resume.pdf)
 
 ## License
 
@@ -83,4 +87,4 @@ This project is open source and available for reference. Please do not copy dire
 
 ---
 
-Built with ❤️ by Jewel Nath
+Built by Jewel Nath
