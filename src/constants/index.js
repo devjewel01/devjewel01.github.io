@@ -23,8 +23,6 @@ import {
     python,
     vscode,
 
-    CZS,
-    BAPGHS,
     quanta_robotics,
     SoRC,
 
