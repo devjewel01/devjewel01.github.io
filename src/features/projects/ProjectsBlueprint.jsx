@@ -11,7 +11,7 @@ const ProjectCard = ({ index, name, description, tags, image, source_code_link }
       variants={fadeIn("up", "spring", index * 0.2, 0.75)}
       className="w-full group"
     >
-      <div className="relative h-full bg-tertiary/30 backdrop-blur-sm rounded-lg border border-white/5 overflow-hidden hover:border-white/20 transition-all duration-500">
+      <div className="relative h-full glass-card overflow-hidden transition-all duration-500">
         {/* Gradient accent on hover */}
         <div className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-500">
           <div className="absolute top-0 right-0 w-32 h-32 bg-terminal-green/10 blur-3xl" />
@@ -40,7 +40,7 @@ const ProjectCard = ({ index, name, description, tags, image, source_code_link }
               href={source_code_link}
               target="_blank"
               rel="noopener noreferrer"
-              className="p-2 rounded-md bg-white/5 hover:bg-white/10 border border-white/10 hover:border-white/20 transition-all duration-300 group/link"
+              className="p-2 rounded-md glass-light hover:glass-strong transition-all duration-300 group/link"
               title="View Source"
             >
               <svg
@@ -54,7 +54,7 @@ const ProjectCard = ({ index, name, description, tags, image, source_code_link }
           </div>
 
           {/* Project image */}
-          <div className="relative w-full aspect-video mb-5 overflow-hidden rounded-md bg-black/20">
+          <div className="relative w-full aspect-video mb-5 overflow-hidden rounded-md glass-light">
             <img
               src={image}
               alt={name}
@@ -80,7 +80,7 @@ const ProjectCard = ({ index, name, description, tags, image, source_code_link }
             {tags.map((tag, tagIndex) => (
               <span
                 key={`${name}-${tag.name}-${tagIndex}`}
-                className="inline-flex items-center gap-1 px-2.5 py-1 rounded-full bg-white/5 border border-white/10 text-xs font-mono text-secondary/70 hover:bg-white/10 hover:text-white transition-all duration-300"
+                className="inline-flex items-center gap-1 px-2.5 py-1 rounded-full glass-light text-xs font-mono text-secondary/70 hover:glass hover:text-white transition-all duration-300"
               >
                 <span className="w-1 h-1 rounded-full bg-terminal-green/60" />
                 {tag.name}

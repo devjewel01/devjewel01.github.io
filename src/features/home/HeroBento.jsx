@@ -203,7 +203,7 @@ const HeroBento = () => {
               target="_blank"
               rel="noopener noreferrer"
               whileHover={{ scale: 1.05, y: -2 }}
-              className="px-6 py-3 bg-tertiary border border-blueprint/30 rounded-lg font-mono text-sm text-secondary hover:text-blueprint-light hover:border-blueprint transition-all cursor-pointer backdrop-blur-sm"
+              className="px-6 py-3 glass-light rounded-lg font-mono text-sm text-secondary hover:text-blueprint-light hover:border-blueprint/50 transition-all cursor-pointer"
             >
               GitHub →
             </motion.a>
@@ -212,14 +212,14 @@ const HeroBento = () => {
               target="_blank"
               rel="noopener noreferrer"
               whileHover={{ scale: 1.05, y: -2 }}
-              className="px-6 py-3 bg-tertiary border border-blueprint/30 rounded-lg font-mono text-sm text-secondary hover:text-blueprint-light hover:border-blueprint transition-all cursor-pointer backdrop-blur-sm"
+              className="px-6 py-3 glass-light rounded-lg font-mono text-sm text-secondary hover:text-blueprint-light hover:border-blueprint/50 transition-all cursor-pointer"
             >
               LinkedIn →
             </motion.a>
             <motion.a
               href="#contact"
               whileHover={{ scale: 1.05, y: -2 }}
-              className="px-6 py-3 bg-blueprint/10 border border-blueprint rounded-lg font-mono text-sm text-blueprint-light hover:bg-blueprint/20 transition-all cursor-pointer backdrop-blur-sm"
+              className="px-6 py-3 glass-button rounded-lg font-mono text-sm text-blueprint-light hover:shadow-blueprint transition-all cursor-pointer"
             >
               Contact Me →
             </motion.a>
@@ -256,7 +256,7 @@ const HeroBento = () => {
         className="absolute bottom-10 left-1/2 transform -translate-x-1/2"
       >
         <a href="#about">
-          <div className="w-[28px] h-[50px] rounded-3xl border-2 border-blueprint/50 flex justify-center items-start p-2 hover:border-blueprint transition-colors">
+          <div className="glass-light w-[28px] h-[50px] rounded-3xl flex justify-center items-start p-2 hover:border-blueprint transition-colors">
             <motion.div
               animate={{
                 y: [0, 16, 0],
@@ -266,7 +266,7 @@ const HeroBento = () => {
                 repeat: Infinity,
                 repeatType: "loop",
               }}
-              className="w-1.5 h-1.5 rounded-full bg-blueprint"
+              className="w-1.5 h-1.5 rounded-full bg-blueprint shadow-blueprint"
             />
           </div>
         </a>

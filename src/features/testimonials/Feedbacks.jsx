@@ -18,7 +18,7 @@ const FeedbackCard = ({
     variants={fadeIn("up", "spring", index * 0.2, 0.75)}
     className="w-full group"
   >
-    <div className="relative h-full bg-tertiary/30 backdrop-blur-sm rounded-lg border border-white/5 overflow-hidden hover:border-white/20 transition-all duration-500">
+    <div className="relative h-full glass-card overflow-hidden transition-all duration-500">
       {/* Gradient accent on hover */}
       <div className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-500">
         <div className="absolute top-0 right-0 w-32 h-32 bg-purple-500/10 blur-3xl" />
@@ -52,7 +52,7 @@ const FeedbackCard = ({
             </p>
           </div>
 
-          <div className="w-14 h-14 md:w-16 md:h-16 rounded-lg border-2 border-white/10 p-1 flex-shrink-0 group-hover:border-white/30 transition-all duration-300">
+          <div className="w-14 h-14 md:w-16 md:h-16 rounded-lg glass-light p-1 flex-shrink-0 group-hover:glass transition-all duration-300">
             <img
               src={image}
               alt={`feedback_by-${name}`}
