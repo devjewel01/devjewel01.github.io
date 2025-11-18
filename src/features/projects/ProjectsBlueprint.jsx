@@ -1,9 +1,9 @@
 import { motion } from "framer-motion";
-import { styles } from "../styles";
-import { projects } from "../constants";
-import { SectionWrapper } from "../hoc";
-import { fadeIn, textVariant } from "../utils/motion";
-import { github } from "../assets";
+import { styles } from "../../styles";
+import { projects } from "../../constants";
+import { SectionWrapper } from "../../hoc";
+import { fadeIn, textVariant } from "../../utils/motion";
+import { github } from "../../assets";
 
 const ProjectCard = ({ index, name, description, tags, image, source_code_link }) => {
   return (

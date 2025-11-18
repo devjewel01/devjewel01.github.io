@@ -1,20 +1,29 @@
-// Blueprint/Terminal Theme Components
-import TerminalNavbar from './TerminalNavbar';
-import HeroBento from './HeroBento';
-import ProjectsBlueprint from './ProjectsBlueprint';
-import TechTerminal from './TechTerminal';
-import ContactTerminal from './ContactTerminal';
-import RobotSVG from './RobotSVG';
-import Experience from './Experience';
-import Feedbacks from './Feedbacks';
+// Layout Components
+import TerminalNavbar from './layout/TerminalNavbar';
+
+// UI Components
+import RobotSVG from './ui/RobotSVG';
+
+// Feature Components
+import HeroBento from '../features/home/HeroBento';
+import ProjectsBlueprint from '../features/projects/ProjectsBlueprint';
+import TechTerminal from '../features/tech/TechTerminal';
+import Experience from '../features/experience/Experience';
+import Feedbacks from '../features/testimonials/Feedbacks';
+import ContactTerminal from '../features/contact/ContactTerminal';
 
 export {
+  // Layout
   TerminalNavbar,
+
+  // UI
+  RobotSVG,
+
+  // Features
   HeroBento,
   ProjectsBlueprint,
   TechTerminal,
-  ContactTerminal,
-  RobotSVG,
   Experience,
   Feedbacks,
+  ContactTerminal,
 }

@@ -1,5 +1,5 @@
 import { useState, useEffect } from "react";
-import { styles } from "../styles";
+import { styles } from "../../styles";
 
 const TerminalNavbar = () => {
   const [scrolled, setScrolled] = useState(false);

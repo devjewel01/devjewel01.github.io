@@ -1,8 +1,8 @@
 import { motion } from "framer-motion";
-import { styles } from "../styles";
-import { technologies } from "../constants";
-import { SectionWrapper } from "../hoc";
-import { textVariant, fadeIn } from "../utils/motion";
+import { styles } from "../../styles";
+import { technologies } from "../../constants";
+import { SectionWrapper } from "../../hoc";
+import { textVariant, fadeIn } from "../../utils/motion";
 
 const TechTerminal = () => {
   // Group technologies by category for better terminal display
