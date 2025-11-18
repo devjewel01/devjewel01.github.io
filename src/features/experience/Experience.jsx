@@ -101,7 +101,7 @@ const Experience = () => {
       <div className="w-full flex">
         <motion.p
           variants={fadeIn("", "", 0.1, 1)}
-          className="mt-4 text-secondary font-sans text-base md:text-lg max-w-3xl leading-relaxed"
+          className="mt-4 text-secondary font-sans text-base md:text-lg max-w-3xl leading-relaxed mb-10"
         >
           My professional journey spans software engineering, robotics education, and entrepreneurship.
           From building enterprise solutions to mentoring the next generation of innovators, each role has
@@ -109,16 +109,57 @@ const Experience = () => {
         </motion.p>
       </div>
 
-      {/* Experience grid layout */}
-      <div className="mt-16 grid grid-cols-1 lg:grid-cols-2 gap-6 md:gap-8">
-        {experiences.map((experience, index) => (
-          <ExperienceCard
-            key={`experience-${index}`}
-            experience={experience}
-            index={index}
-          />
-        ))}
-      </div>
+      {/* Terminal Window Wrapper */}
+      <motion.div
+        variants={fadeIn("up", "spring", 0.2, 0.75)}
+        className="relative border border-white/10 rounded-xl overflow-hidden bg-black/30 backdrop-blur-sm shadow-2xl"
+      >
+        {/* Terminal Header */}
+        <div className="bg-tertiary border-b border-white/10 px-4 py-3 flex items-center justify-between">
+          <div className="flex items-center gap-2">
+            {/* Terminal Buttons */}
+            <div className="flex gap-2">
+              <div className="w-3 h-3 rounded-full bg-red-500/80 hover:bg-red-500 transition-colors cursor-pointer" />
+              <div className="w-3 h-3 rounded-full bg-yellow-500/80 hover:bg-yellow-500 transition-colors cursor-pointer" />
+              <div className="w-3 h-3 rounded-full bg-green-500/80 hover:bg-green-500 transition-colors cursor-pointer" />
+            </div>
+            {/* Terminal Title */}
+            <span className="ml-3 text-secondary/70 font-mono text-sm">
+              work_experience.sh
+            </span>
+          </div>
+          <div className="flex items-center gap-2 text-secondary/50 text-xs font-mono">
+            <span className="hidden sm:inline">zsh</span>
+            <span>●</span>
+            <span className="hidden sm:inline">{experiences.length} roles</span>
+          </div>
+        </div>
+
+        {/* Command Prompt Line */}
+        <div className="bg-black/20 border-b border-white/5 px-6 py-3 font-mono text-sm">
+          <span className="text-terminal-green">➜</span>
+          <span className="text-blueprint ml-2">~/portfolio</span>
+          <span className="text-secondary/50 ml-2">cat work_experience.sh</span>
+          <span className="animate-pulse ml-1">▊</span>
+        </div>
+
+        {/* Experience grid layout */}
+        <div className="p-6 grid grid-cols-1 lg:grid-cols-2 gap-6 md:gap-8">
+          {experiences.map((experience, index) => (
+            <ExperienceCard
+              key={`experience-${index}`}
+              experience={experience}
+              index={index}
+            />
+          ))}
+        </div>
+
+        {/* Terminal Footer */}
+        <div className="bg-black/20 border-t border-white/5 px-6 py-2 font-mono text-xs text-secondary/50 flex items-center justify-between">
+          <span>{experiences.length} roles loaded successfully</span>
+          <span className="hidden sm:inline">Press ESC to exit</span>
+        </div>
+      </motion.div>
     </>
   );
 };

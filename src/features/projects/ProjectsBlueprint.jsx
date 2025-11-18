@@ -107,7 +107,7 @@ const ProjectsBlueprint = () => {
       <div className="w-full flex">
         <motion.p
           variants={fadeIn("", "", 0.1, 1)}
-          className="mt-4 text-secondary font-sans text-base md:text-lg max-w-3xl leading-relaxed"
+          className="mt-4 text-secondary font-sans text-base md:text-lg max-w-3xl leading-relaxed mb-10"
         >
           The following projects showcase my skills through real-world examples.
           Each project includes technical specifications, source code repositories,
@@ -115,12 +115,53 @@ const ProjectsBlueprint = () => {
         </motion.p>
       </div>
 
-      {/* Blueprint grid layout for projects */}
-      <div className="mt-16 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-        {projects.map((project, index) => (
-          <ProjectCard key={`project-${index}`} index={index} {...project} />
-        ))}
-      </div>
+      {/* Terminal Window Wrapper */}
+      <motion.div
+        variants={fadeIn("up", "spring", 0.2, 0.75)}
+        className="relative border border-white/10 rounded-xl overflow-hidden bg-black/30 backdrop-blur-sm shadow-2xl"
+      >
+        {/* Terminal Header */}
+        <div className="bg-tertiary border-b border-white/10 px-4 py-3 flex items-center justify-between">
+          <div className="flex items-center gap-2">
+            {/* Terminal Buttons */}
+            <div className="flex gap-2">
+              <div className="w-3 h-3 rounded-full bg-red-500/80 hover:bg-red-500 transition-colors cursor-pointer" />
+              <div className="w-3 h-3 rounded-full bg-yellow-500/80 hover:bg-yellow-500 transition-colors cursor-pointer" />
+              <div className="w-3 h-3 rounded-full bg-green-500/80 hover:bg-green-500 transition-colors cursor-pointer" />
+            </div>
+            {/* Terminal Title */}
+            <span className="ml-3 text-secondary/70 font-mono text-sm">
+              projects.sh
+            </span>
+          </div>
+          <div className="flex items-center gap-2 text-secondary/50 text-xs font-mono">
+            <span className="hidden sm:inline">zsh</span>
+            <span>●</span>
+            <span className="hidden sm:inline">{projects.length} projects</span>
+          </div>
+        </div>
+
+        {/* Command Prompt Line */}
+        <div className="bg-black/20 border-b border-white/5 px-6 py-3 font-mono text-sm">
+          <span className="text-terminal-green">➜</span>
+          <span className="text-blueprint ml-2">~/portfolio</span>
+          <span className="text-secondary/50 ml-2">ls -la projects/</span>
+          <span className="animate-pulse ml-1">▊</span>
+        </div>
+
+        {/* Projects grid layout */}
+        <div className="p-6 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+          {projects.map((project, index) => (
+            <ProjectCard key={`project-${index}`} index={index} {...project} />
+          ))}
+        </div>
+
+        {/* Terminal Footer */}
+        <div className="bg-black/20 border-t border-white/5 px-6 py-2 font-mono text-xs text-secondary/50 flex items-center justify-between">
+          <span>{projects.length} projects loaded successfully</span>
+          <span className="hidden sm:inline">Press ESC to exit</span>
+        </div>
+      </motion.div>
     </>
   );
 };
