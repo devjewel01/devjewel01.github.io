@@ -12,7 +12,7 @@ const ExperienceCard = ({ experience, index }) => {
       variants={fadeIn("up", "spring", index * 0.15, 0.75)}
       className="w-full group"
     >
-      <div className="relative h-full bg-tertiary/30 backdrop-blur-sm rounded-lg border border-white/5 overflow-hidden hover:border-white/20 transition-all duration-500">
+      <div className="relative h-full glass-card overflow-hidden transition-all duration-500">
         {/* Gradient accent on hover */}
         <div className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-500">
           <div className="absolute top-0 right-0 w-40 h-40 bg-blueprint/10 blur-3xl" />
@@ -26,7 +26,7 @@ const ExperienceCard = ({ experience, index }) => {
             {/* Icon with glow effect */}
             <div className="relative flex-shrink-0">
               <div
-                className="w-14 h-14 md:w-16 md:h-16 rounded-xl flex items-center justify-center border-2 border-blueprint/30 group-hover:border-blueprint/60 transition-all duration-500 relative overflow-hidden"
+                className="glass-light w-14 h-14 md:w-16 md:h-16 rounded-xl flex items-center justify-center group-hover:glass transition-all duration-500 relative overflow-hidden"
                 style={{ backgroundColor: experience.iconBg }}
               >
                 {/* Icon glow on hover */}

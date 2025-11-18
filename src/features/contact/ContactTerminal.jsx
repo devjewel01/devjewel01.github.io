@@ -95,7 +95,7 @@ const ContactTerminal = () => {
         <h3 className={styles.sectionHeadText}>Contact.</h3>
 
         <div className="mt-8 space-y-6">
-          <div className="bento-box p-6">
+          <div className="glass-card p-6">
             <div className="text-blueprint text-sm mb-3 font-semibold uppercase tracking-wider">
               Email
             </div>
@@ -107,7 +107,7 @@ const ContactTerminal = () => {
             </a>
           </div>
 
-          <div className="bento-box p-6">
+          <div className="glass-card p-6">
             <div className="text-blueprint text-sm mb-3 font-semibold uppercase tracking-wider">
               Social Links
             </div>
@@ -133,12 +133,12 @@ const ContactTerminal = () => {
             </div>
           </div>
 
-          <div className="bento-box p-6">
+          <div className="glass-card p-6">
             <div className="text-blueprint text-sm mb-3 font-semibold uppercase tracking-wider">
               Location
             </div>
             <div className="text-secondary">
-              Cumilla, Bangladesh
+              Dhaka, Bangladesh
             </div>
           </div>
         </div>
@@ -149,7 +149,7 @@ const ContactTerminal = () => {
         variants={slideIn("right", "tween", 0.2, 1)}
         className="flex-1"
       >
-        <div className="bento-box p-8">
+        <div className="glass-card p-8">
           {/* Status Message */}
           {statusMessage.text && (
             <div className={`
@@ -175,7 +175,7 @@ const ContactTerminal = () => {
                 value={form.name}
                 onChange={handleChange}
                 placeholder="Enter your name"
-                className="w-full bg-tertiary/50 border border-white/10 rounded-lg px-4 py-3 text-white text-sm focus:outline-none focus:border-blueprint transition-all"
+                className="w-full glass-light rounded-lg px-4 py-3 text-white text-sm focus:outline-none focus:border-blueprint transition-all"
               />
             </div>
 
@@ -190,7 +190,7 @@ const ContactTerminal = () => {
                 value={form.email}
                 onChange={handleChange}
                 placeholder="Enter your email"
-                className="w-full bg-tertiary/50 border border-white/10 rounded-lg px-4 py-3 text-white text-sm focus:outline-none focus:border-blueprint transition-all"
+                className="w-full glass-light rounded-lg px-4 py-3 text-white text-sm focus:outline-none focus:border-blueprint transition-all"
               />
             </div>
 
@@ -205,7 +205,7 @@ const ContactTerminal = () => {
                 value={form.message}
                 onChange={handleChange}
                 placeholder="Type your message here..."
-                className="w-full bg-tertiary/50 border border-white/10 rounded-lg px-4 py-3 text-white text-sm focus:outline-none focus:border-blueprint transition-all resize-none"
+                className="w-full glass-light rounded-lg px-4 py-3 text-white text-sm focus:outline-none focus:border-blueprint transition-all resize-none"
               />
             </div>
 
@@ -214,11 +214,11 @@ const ContactTerminal = () => {
               type="submit"
               disabled={loading}
               className={`
-                w-full text-sm py-3 rounded-lg border transition-all font-semibold
+                w-full text-sm py-3 rounded-lg transition-all font-semibold
                 ${
                   loading
-                    ? "bg-blueprint/20 border-blueprint/40 text-blueprint/60 cursor-not-allowed"
-                    : "bg-blueprint/10 border-blueprint text-blueprint hover:bg-blueprint/20"
+                    ? "glass-light text-blueprint/60 cursor-not-allowed"
+                    : "glass-button text-blueprint hover:shadow-blueprint"
                 }
               `}
             >

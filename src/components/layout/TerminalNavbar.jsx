@@ -37,7 +37,7 @@ const TerminalNavbar = () => {
   return (
     <nav
       className={`${styles.paddingX} w-full flex items-center py-4 fixed top-0 z-20 transition-all duration-300 ${
-        scrolled ? "bg-primary/95 backdrop-blur-md border-b border-white/10" : "bg-transparent"
+        scrolled ? "glass-strong border-b border-white/10" : "bg-transparent"
       }`}
     >
       <div className="w-full flex justify-between items-center max-w-7xl mx-auto">
@@ -69,7 +69,7 @@ const TerminalNavbar = () => {
             href="/Jewel Resume.pdf"
             target="_blank"
             rel="noopener noreferrer"
-            className="text-sm border border-blueprint text-blueprint px-4 py-2 rounded-lg hover:bg-blueprint/10 transition-all"
+            className="text-sm glass-button text-blueprint px-4 py-2 rounded-lg transition-all"
           >
             Resume
           </a>
@@ -104,7 +104,7 @@ const MobileMenu = ({ navItems, scrollToElement }) => {
 
       {/* Mobile Dropdown */}
       {isOpen && (
-        <div className="absolute top-full right-0 mt-2 mx-4 bg-tertiary/95 backdrop-blur-md border border-white/10 rounded-lg shadow-2xl min-w-[200px] overflow-hidden">
+        <div className="absolute top-full right-0 mt-2 mx-4 glass-strong rounded-lg shadow-2xl min-w-[200px] overflow-hidden">
           <div className="p-4 space-y-3">
             {navItems.map((item) => (
               <button

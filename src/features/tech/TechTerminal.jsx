@@ -55,7 +55,7 @@ const TechTerminal = () => {
             key={key}
             variants={fadeIn("up", "spring", 0.2 + catIndex * 0.1, 0.75)}
             className={`
-              bento-box group relative overflow-hidden
+              glass-card group relative overflow-hidden
               ${key === 'backend' ? 'lg:col-span-2' : ''}
               ${key === 'learning' ? 'md:col-span-2 lg:col-span-1' : ''}
             `}
@@ -90,9 +90,8 @@ const TechTerminal = () => {
                     whileHover={{ scale: 1.05, y: -2 }}
                     className={`
                       relative px-3 py-1.5 rounded
-                      bg-tertiary/50 backdrop-blur-sm
-                      border border-white/10
-                      hover:border-${color.replace('text-', '')}/50
+                      glass-light
+                      hover:glass
                       transition-all duration-300
                       cursor-pointer
                       group/pill
