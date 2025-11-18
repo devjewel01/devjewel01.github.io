@@ -155,18 +155,14 @@ const HeroBento = () => {
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8 }}
         >
-          {/* Terminal-style greeting */}
+          {/* Modern greeting */}
           <motion.div
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             transition={{ delay: 0.2 }}
-            className="font-mono text-terminal-green text-xs md:text-sm mb-8 flex items-center justify-center gap-2"
+            className="text-blueprint text-sm md:text-base mb-8 font-semibold tracking-wide"
           >
-            <span className="text-blueprint">jewel@portfolio</span>
-            <span className="text-secondary">:</span>
-            <span className="text-white">~</span>
-            <span className="text-terminal-green">$</span>
-            <span className="text-secondary">./introduce.sh</span>
+            Welcome to My Portfolio
           </motion.div>
 
           {/* Name */}
@@ -191,7 +187,7 @@ const HeroBento = () => {
           >
             <p className="text-lg md:text-2xl text-secondary flex items-center justify-center">
               {displayText}
-              <span className="terminal-cursor ml-1"></span>
+              <span className="inline-block w-0.5 h-6 md:h-8 bg-blueprint ml-2 animate-pulse"></span>
             </p>
           </motion.div>
 
