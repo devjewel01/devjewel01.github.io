@@ -48,105 +48,72 @@ const TechTerminal = () => {
         Tech stack powering enterprise software, robotics automation, and AI-driven solutions.
       </motion.p>
 
-      {/* Terminal Window */}
-      <motion.div
-        variants={fadeIn("up", "spring", 0.2, 0.75)}
-        className="terminal-window w-full"
-      >
-        {/* Terminal Header */}
-        <div className="terminal-header">
-          <div className="flex items-center gap-2">
-            <div className="terminal-dot red" />
-            <div className="terminal-dot yellow" />
-            <div className="terminal-dot green" />
-          </div>
-          <span className="font-mono text-xs text-secondary/70">
-            jewel@portfolio:~/tech-stack
-          </span>
-        </div>
-
-        {/* Terminal Body */}
-        <div className="p-6 md:p-8 font-mono text-sm space-y-6">
-          {/* Command prompt */}
-          <div className="flex items-center gap-2 text-secondary">
-            <span className="text-terminal-green">➜</span>
-            <span className="text-blueprint">~</span>
-            <span className="text-secondary/70">cat</span>
-            <span className="text-yellow-400">stack.yml</span>
-          </div>
-
-          {/* ASCII Art Separator */}
-          <div className="text-blueprint/40 text-xs leading-tight">
-            ╔════════════════════════════════════════════════════╗
-          </div>
-
-          {/* Technology Categories */}
-          <div className="space-y-5">
-            {Object.entries(techCategories).map(([key, { label, techs, color }], catIndex) => (
-              <motion.div
-                key={key}
-                variants={fadeIn("right", "spring", 0.3 + catIndex * 0.1, 0.75)}
-                className="space-y-2"
-              >
-                {/* Category Header */}
-                <div className="flex items-center gap-2">
-                  <span className={`${color} font-bold`}>■</span>
-                  <span className={`${color} text-sm font-semibold tracking-wide`}>
-                    {label}
-                  </span>
-                  <div className="flex-1 h-px bg-gradient-to-r from-blueprint/30 to-transparent" />
-                </div>
-
-                {/* Technologies List */}
-                <div className="pl-4 space-y-1.5">
-                  {techs.map((tech, index) => (
-                    <motion.div
-                      key={tech}
-                      initial={{ opacity: 0, x: -20 }}
-                      animate={{ opacity: 1, x: 0 }}
-                      transition={{ delay: 0.4 + catIndex * 0.1 + index * 0.05 }}
-                      className="flex items-center gap-2 text-secondary/90 hover:text-white transition-colors group"
-                    >
-                      <span className={`${color} text-xs`}>▸</span>
-                      <span className="text-sm group-hover:translate-x-1 transition-transform">
-                        {tech}
-                      </span>
-                      <div className={`h-px flex-1 ${color} opacity-0 group-hover:opacity-30 transition-opacity`} />
-                    </motion.div>
-                  ))}
-                </div>
-              </motion.div>
-            ))}
-          </div>
-
-          {/* ASCII Art Separator */}
-          <div className="text-blueprint/40 text-xs leading-tight">
-            ╚════════════════════════════════════════════════════╝
-          </div>
-
-          {/* System Info */}
+      {/* Bento Grid Layout - Unique Floating Cards */}
+      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 auto-rows-auto">
+        {Object.entries(techCategories).map(([key, { label, techs, color }], catIndex) => (
           <motion.div
-            variants={fadeIn("up", "spring", 0.8, 0.75)}
-            className="pt-4 space-y-2 text-xs"
+            key={key}
+            variants={fadeIn("up", "spring", 0.2 + catIndex * 0.1, 0.75)}
+            className={`
+              bento-box group relative overflow-hidden
+              ${key === 'backend' ? 'lg:col-span-2' : ''}
+              ${key === 'learning' ? 'md:col-span-2 lg:col-span-1' : ''}
+            `}
           >
-            <div className="flex items-center gap-3 text-secondary/70">
-              <span className="text-terminal-green">●</span>
-              <span>System: Ready</span>
-              <span className="text-blueprint">|</span>
-              <span>Stack: Updated</span>
-              <span className="text-blueprint">|</span>
-              <span>Status: Active</span>
+            {/* Animated Background Gradient */}
+            <div className={`absolute inset-0 opacity-0 group-hover:opacity-5 transition-opacity duration-500 bg-gradient-to-br ${color.replace('text-', 'from-')} to-transparent`} />
+
+            {/* Card Content */}
+            <div className="relative p-6 h-full flex flex-col">
+              {/* Category Header */}
+              <div className="flex items-center gap-3 mb-4">
+                <div className={`w-1 h-8 ${color.replace('text-', 'bg-')} rounded-full`} />
+                <div>
+                  <h3 className={`${color} font-mono text-sm font-semibold tracking-wider`}>
+                    {label.toUpperCase()}
+                  </h3>
+                  <div className="flex items-center gap-2 mt-1">
+                    <span className="text-secondary/50 text-xs font-mono">{techs.length} techs</span>
+                    <div className={`h-px w-8 ${color.replace('text-', 'bg-')} opacity-30`} />
+                  </div>
+                </div>
+              </div>
+
+              {/* Technologies as Floating Pills */}
+              <div className="flex flex-wrap gap-2">
+                {techs.map((tech, index) => (
+                  <motion.div
+                    key={tech}
+                    initial={{ opacity: 0, scale: 0.8 }}
+                    animate={{ opacity: 1, scale: 1 }}
+                    transition={{ delay: 0.3 + catIndex * 0.1 + index * 0.05 }}
+                    whileHover={{ scale: 1.05, y: -2 }}
+                    className={`
+                      relative px-3 py-1.5 rounded-full
+                      bg-tertiary/50 backdrop-blur-sm
+                      border border-white/5
+                      hover:border-white/20
+                      transition-all duration-300
+                      cursor-pointer
+                      group/pill
+                    `}
+                  >
+                    <span className="text-white/90 text-sm font-sans group-hover/pill:text-white transition-colors">
+                      {tech}
+                    </span>
+
+                    {/* Hover glow effect */}
+                    <div className={`absolute inset-0 rounded-full opacity-0 group-hover/pill:opacity-20 transition-opacity ${color.replace('text-', 'bg-')} blur-md -z-10`} />
+                  </motion.div>
+                ))}
+              </div>
+
+              {/* Corner Accent */}
+              <div className={`absolute top-0 right-0 w-16 h-16 ${color.replace('text-', 'bg-')} opacity-5 blur-2xl rounded-full -translate-y-8 translate-x-8 group-hover:opacity-10 transition-opacity`} />
             </div>
           </motion.div>
-
-          {/* Terminal cursor */}
-          <div className="flex items-center gap-2">
-            <span className="text-terminal-green">➜</span>
-            <span className="text-blueprint">~</span>
-            <span className="animate-terminal-blink text-white">█</span>
-          </div>
-        </div>
-      </motion.div>
+        ))}
+      </div>
 
       {/* Tech Icon Grid - Minimal Cards */}
       <motion.div
