@@ -120,54 +120,56 @@ import {
   
   const experiences = [
     {
-      title: "Programming Trainer",
-      company_name: "Burichang Ananda Pilot Govt. High School",
-      icon: BAPGHS,
-      iconBg: "#383E56",
-      date: "March 2021 - August 2023",
+      title: "Software Engineer (.NET)",
+      company_name: "Orbitax",
+      icon: backend,
+      iconBg: "#05BFDB",
+      date: "May 2024 - Present",
       points: [
-        "Empower students with essential programming skills in C and C++",
-        "Fostering problem-solving abilities through programming.",
-        "Guiding aspiring programmers for National High School Programming Contest.",
-        "I strive to inspire and equip them for future success in the programming world"
+        "Developing and maintaining .NET-based enterprise solutions for tax compliance and regulatory software",
+        "Collaborating with cross-functional teams to enhance software performance and scalability",
+        "Working with modern .NET technologies and best practices to deliver robust applications",
+        "Contributing to code reviews and technical documentation"
       ],
     },
     {
-      title: "NSHPC Instructor",
-      company_name: "Cumilla Zilla School",
-      icon: CZS,
-      iconBg: "#E6DEDD",
-      date: "May 2022 - November 2022",
+      title: "Founder & Chief Mentor",
+      company_name: "RoboICT",
+      icon: robot_icon,
+      iconBg: "#161B22",
+      date: "2024 - Present",
       points: [
-        "I had the privilege of teaching programming to students, conducting two classes per week",
-        "Through engaging lessons, I aimed to inspire young minds in the fascinating realms of programming and robotics, fostering creativity and critical thinking among the next generation of tech enthusiasts.",
-        "and make their ready for National High School Programming Contest (NHSPC)"
+        "Founded an educational startup focused on teaching robotics and programming to school and college students",
+        "Designed hands-on courses combining Arduino, IoT, and basic AI concepts",
+        "Mentoring students in robotics competitions and project development",
+        "Building a community of young robotics enthusiasts and innovators"
       ],
     },
     {
-      title: "Robotics Trainer",
-      company_name: "School of Robotics, Cumilla",
+      title: "Programming & Robotics Trainer",
+      company_name: "Comilla District Commissioner's Office",
       icon: SoRC,
       iconBg: "#383E56",
-      date: "July 2022 - December 2022",
+      date: "2022 - 2023",
       points: [
-        "In collaboration with the Deputy Commissioner of Comilla, I conducted many robotics sessions across various upazilas in Cumilla.",
-        "I played a pivotal role in establishing the Comilla Robotics and Programming Club, imparting valuable knowledge to aspiring learners",
-        "My dedication led to recognition as a popular trainer at the School of Robotics, leaving a lasting impact on the robotics community in the region.",
+        "Delivered robotics and programming workshops across 10 upazilas in Cumilla district",
+        "Trained students from 30 schools and colleges in robotics fundamentals",
+        "Conducted hands-on sessions on Arduino, sensors, and basic robotics concepts",
+        "Collaborated with the Deputy Commissioner's office to promote STEM education"
       ],
     },
     {
-      title: "Robotics Programmer",
+      title: "Co-Founder & Robotics Programmer",
       company_name: "Quanta Robotics",
       icon: quanta_robotics,
       iconBg: "#E6DEDD",
-      date: "Jan 2020 - Present",
+      date: "2021 - 2023",
       points: [
-        "As a co-founder of Quanta Robotics, I took the lead in establishing the startup in 2022.",
-        "In my role as a programmer, I am deeply involved in the development and execution of various robotics projects",
-        "Robot Sheena marked our initial success—a basic humanoid robot built with Arduino. It laid the foundation for more ambitious projects, sparking our team's passion for robotics",
-        "Robot Blueberry was a significant leap, integrating Raspberry Pi for enhanced capabilities. Its versatility and advanced features propelled our team's pursuit of cutting-edge robotics",
-        "Robot Niko, crafted using 3D printing and the inmoov open-source model, showcased our team's innovation. Armed with a camera and machine learning, Niko represented our dedication to pushing boundaries in robotics."
+        "Led development of three humanoid robotics projects: Robot Niko, Robot Sheena, and Robot Blueberry",
+        "Worked with ROS2, URDF, Gazebo simulation, and MoveIt for robot planning and control",
+        "Developed IoT and embedded-systems projects focused on automation and smart devices",
+        "Implemented computer vision and machine learning algorithms for autonomous robot behavior",
+        "Managed hardware integration including Arduino, Raspberry Pi, and various sensors"
       ],
     },
   ];
