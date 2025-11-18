@@ -6,24 +6,24 @@ import { styles } from "../../styles";
 const FloatingIcons = () => {
   const icons = [
     // Robots
-    { type: 'robot', x: '10%', y: '20%', delay: 0, duration: 20 },
-    { type: 'robot', x: '85%', y: '60%', delay: 5, duration: 25 },
-    { type: 'robot', x: '70%', y: '15%', delay: 10, duration: 22 },
+    { type: 'robot', x: '10%', y: '20%', delay: 0, duration: 8 },
+    { type: 'robot', x: '85%', y: '60%', delay: 2.5, duration: 10 },
+    { type: 'robot', x: '70%', y: '15%', delay: 5, duration: 9 },
 
     // Code brackets
-    { type: 'code', symbol: '<>', x: '15%', y: '70%', delay: 2, duration: 18 },
-    { type: 'code', symbol: '{·}', x: '80%', y: '30%', delay: 7, duration: 20 },
-    { type: 'code', symbol: '</>', x: '25%', y: '45%', delay: 12, duration: 24 },
+    { type: 'code', symbol: '<>', x: '15%', y: '70%', delay: 1, duration: 7 },
+    { type: 'code', symbol: '{·}', x: '80%', y: '30%', delay: 3.5, duration: 8 },
+    { type: 'code', symbol: '</>', x: '25%', y: '45%', delay: 6, duration: 9.5 },
 
     // AI brain/chip icons
-    { type: 'chip', x: '90%', y: '80%', delay: 4, duration: 19 },
-    { type: 'chip', x: '20%', y: '85%', delay: 9, duration: 21 },
-    { type: 'chip', x: '60%', y: '75%', delay: 14, duration: 23 },
+    { type: 'chip', x: '90%', y: '80%', delay: 2, duration: 7.5 },
+    { type: 'chip', x: '20%', y: '85%', delay: 4.5, duration: 8.5 },
+    { type: 'chip', x: '60%', y: '75%', delay: 7, duration: 9 },
 
     // Circuit nodes
-    { type: 'node', x: '40%', y: '25%', delay: 6, duration: 17 },
-    { type: 'node', x: '50%', y: '90%', delay: 11, duration: 26 },
-    { type: 'node', x: '75%', y: '50%', delay: 3, duration: 19 },
+    { type: 'node', x: '40%', y: '25%', delay: 3, duration: 6.5 },
+    { type: 'node', x: '50%', y: '90%', delay: 5.5, duration: 10 },
+    { type: 'node', x: '75%', y: '50%', delay: 1.5, duration: 7.5 },
   ];
 
   return (
@@ -34,9 +34,11 @@ const FloatingIcons = () => {
           className="absolute"
           style={{ left: icon.x, top: icon.y }}
           animate={{
-            y: [0, -30, 0],
-            x: [0, 15, 0],
-            rotate: [0, 5, -5, 0],
+            y: [0, -60, 0],
+            x: [0, 30, -15, 0],
+            rotate: [0, 10, -10, 0],
+            scale: [1, 1.15, 0.95, 1],
+            opacity: [0.3, 0.6, 0.4, 0.3],
           }}
           transition={{
             duration: icon.duration,
@@ -46,7 +48,7 @@ const FloatingIcons = () => {
           }}
         >
           {icon.type === 'robot' && (
-            <svg className="w-8 h-8 md:w-12 md:h-12 opacity-20" viewBox="0 0 50 50" fill="none">
+            <svg className="w-8 h-8 md:w-12 md:h-12 drop-shadow-[0_0_8px_rgba(5,191,219,0.6)]" viewBox="0 0 50 50" fill="none">
               <rect x="15" y="10" width="20" height="15" stroke="#05BFDB" strokeWidth="1.5" rx="2" />
               <circle cx="20" cy="16" r="1.5" fill="#00FFCB" />
               <circle cx="30" cy="16" r="1.5" fill="#00FFCB" />
@@ -59,12 +61,12 @@ const FloatingIcons = () => {
             </svg>
           )}
           {icon.type === 'code' && (
-            <span className="font-mono text-2xl md:text-4xl text-blueprint opacity-15 font-bold">
+            <span className="font-mono text-2xl md:text-4xl text-blueprint font-bold drop-shadow-[0_0_10px_rgba(5,191,219,0.7)]">
               {icon.symbol}
             </span>
           )}
           {icon.type === 'chip' && (
-            <svg className="w-8 h-8 md:w-10 md:h-10 opacity-20" viewBox="0 0 50 50" fill="none">
+            <svg className="w-8 h-8 md:w-10 md:h-10 drop-shadow-[0_0_8px_rgba(0,255,203,0.6)]" viewBox="0 0 50 50" fill="none">
               <rect x="15" y="15" width="20" height="20" stroke="#05BFDB" strokeWidth="1.5" rx="2" />
               <rect x="20" y="20" width="10" height="10" stroke="#00FFCB" strokeWidth="1" rx="1" />
               {[12, 18, 24, 30, 36].map(y => (
@@ -76,10 +78,10 @@ const FloatingIcons = () => {
             </svg>
           )}
           {icon.type === 'node' && (
-            <svg className="w-6 h-6 md:w-8 md:h-8 opacity-15" viewBox="0 0 40 40" fill="none">
+            <svg className="w-6 h-6 md:w-8 md:h-8 drop-shadow-[0_0_6px_rgba(0,255,203,0.8)]" viewBox="0 0 40 40" fill="none">
               <circle cx="20" cy="20" r="3" fill="#00FFCB" />
-              <circle cx="20" cy="20" r="8" stroke="#05BFDB" strokeWidth="1" opacity="0.5" />
-              <circle cx="20" cy="20" r="12" stroke="#05BFDB" strokeWidth="0.5" opacity="0.3" />
+              <circle cx="20" cy="20" r="8" stroke="#05BFDB" strokeWidth="1" opacity="0.7" />
+              <circle cx="20" cy="20" r="12" stroke="#05BFDB" strokeWidth="0.5" opacity="0.5" />
             </svg>
           )}
         </motion.div>
@@ -126,16 +128,18 @@ const HeroBento = () => {
 
       {/* Animated Background Gradient */}
       <motion.div
-        className="absolute inset-0 opacity-20"
+        className="absolute inset-0 opacity-30"
         animate={{
           background: [
-            "radial-gradient(circle at 20% 50%, rgba(5, 191, 219, 0.1) 0%, transparent 50%)",
-            "radial-gradient(circle at 80% 50%, rgba(0, 255, 203, 0.1) 0%, transparent 50%)",
-            "radial-gradient(circle at 20% 50%, rgba(5, 191, 219, 0.1) 0%, transparent 50%)",
+            "radial-gradient(circle at 20% 30%, rgba(5, 191, 219, 0.15) 0%, transparent 50%)",
+            "radial-gradient(circle at 80% 70%, rgba(0, 255, 203, 0.15) 0%, transparent 50%)",
+            "radial-gradient(circle at 50% 50%, rgba(5, 191, 219, 0.12) 0%, transparent 50%)",
+            "radial-gradient(circle at 30% 80%, rgba(0, 255, 203, 0.15) 0%, transparent 50%)",
+            "radial-gradient(circle at 20% 30%, rgba(5, 191, 219, 0.15) 0%, transparent 50%)",
           ],
         }}
         transition={{
-          duration: 10,
+          duration: 15,
           repeat: Infinity,
           ease: "easeInOut",
         }}
