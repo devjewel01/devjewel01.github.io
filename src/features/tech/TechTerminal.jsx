@@ -158,55 +158,6 @@ const TechTerminal = () => {
           <span className="hidden sm:inline">Press ESC to exit</span>
         </div>
       </motion.div>
-
-
-      {/* Info Cards - Updated */}
-      <div className="mt-10 grid grid-cols-1 md:grid-cols-3 gap-4">
-        <motion.div
-          variants={fadeIn("right", "spring", 1, 0.75)}
-          className="bento-box p-6 border-l-2 border-terminal-green"
-        >
-          <div className="font-mono text-terminal-green text-xs mb-2 uppercase tracking-wider flex items-center gap-2">
-            <span>■</span> Current Focus
-          </div>
-          <div className="font-sans text-white text-lg font-semibold mb-2">
-            .NET Development
-          </div>
-          <div className="font-sans text-secondary text-sm">
-            Building enterprise solutions with .NET, MongoDB, and Angular
-          </div>
-        </motion.div>
-
-        <motion.div
-          variants={fadeIn("right", "spring", 1.1, 0.75)}
-          className="bento-box p-6 border-l-2 border-[#00FFCB]"
-        >
-          <div className="font-mono text-[#00FFCB] text-xs mb-2 uppercase tracking-wider flex items-center gap-2">
-            <span>■</span> Robotics Background
-          </div>
-          <div className="font-sans text-white text-lg font-semibold mb-2">
-            ROS2 & Automation
-          </div>
-          <div className="font-sans text-secondary text-sm">
-            ROS2, Python, Playwright automation on Linux/Ubuntu
-          </div>
-        </motion.div>
-
-        <motion.div
-          variants={fadeIn("right", "spring", 1.2, 0.75)}
-          className="bento-box p-6 border-l-2 border-yellow-400"
-        >
-          <div className="font-mono text-yellow-400 text-xs mb-2 uppercase tracking-wider flex items-center gap-2">
-            <span>■</span> Exploring
-          </div>
-          <div className="font-sans text-white text-lg font-semibold mb-2">
-            AI & LLM
-          </div>
-          <div className="font-sans text-secondary text-sm">
-            LLMs, AI Agents, MCP, RAG, and Prompt Engineering
-          </div>
-        </motion.div>
-      </div>
     </>
   );
 };
