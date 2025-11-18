@@ -1,7 +1,92 @@
 import { useState, useEffect } from "react";
 import { motion } from "framer-motion";
 import { styles } from "../../styles";
-import TechOrb from "../../components/ui/TechOrb";
+
+// Floating Background Icons Component
+const FloatingIcons = () => {
+  const icons = [
+    // Robots
+    { type: 'robot', x: '10%', y: '20%', delay: 0, duration: 20 },
+    { type: 'robot', x: '85%', y: '60%', delay: 5, duration: 25 },
+    { type: 'robot', x: '70%', y: '15%', delay: 10, duration: 22 },
+
+    // Code brackets
+    { type: 'code', symbol: '<>', x: '15%', y: '70%', delay: 2, duration: 18 },
+    { type: 'code', symbol: '{·}', x: '80%', y: '30%', delay: 7, duration: 20 },
+    { type: 'code', symbol: '</>', x: '25%', y: '45%', delay: 12, duration: 24 },
+
+    // AI brain/chip icons
+    { type: 'chip', x: '90%', y: '80%', delay: 4, duration: 19 },
+    { type: 'chip', x: '20%', y: '85%', delay: 9, duration: 21 },
+    { type: 'chip', x: '60%', y: '75%', delay: 14, duration: 23 },
+
+    // Circuit nodes
+    { type: 'node', x: '40%', y: '25%', delay: 6, duration: 17 },
+    { type: 'node', x: '50%', y: '90%', delay: 11, duration: 26 },
+    { type: 'node', x: '75%', y: '50%', delay: 3, duration: 19 },
+  ];
+
+  return (
+    <div className="absolute inset-0 overflow-hidden pointer-events-none">
+      {icons.map((icon, index) => (
+        <motion.div
+          key={index}
+          className="absolute"
+          style={{ left: icon.x, top: icon.y }}
+          animate={{
+            y: [0, -30, 0],
+            x: [0, 15, 0],
+            rotate: [0, 5, -5, 0],
+          }}
+          transition={{
+            duration: icon.duration,
+            delay: icon.delay,
+            repeat: Infinity,
+            ease: "easeInOut",
+          }}
+        >
+          {icon.type === 'robot' && (
+            <svg className="w-8 h-8 md:w-12 md:h-12 opacity-20" viewBox="0 0 50 50" fill="none">
+              <rect x="15" y="10" width="20" height="15" stroke="#05BFDB" strokeWidth="1.5" rx="2" />
+              <circle cx="20" cy="16" r="1.5" fill="#00FFCB" />
+              <circle cx="30" cy="16" r="1.5" fill="#00FFCB" />
+              <line x1="25" y1="5" x2="25" y2="10" stroke="#05BFDB" strokeWidth="1.5" />
+              <circle cx="25" cy="4" r="2" fill="#00FFCB" />
+              <rect x="18" y="25" width="14" height="18" stroke="#05BFDB" strokeWidth="1.5" rx="2" />
+              <circle cx="25" cy="34" r="3" stroke="#05BFDB" strokeWidth="1.5" fill="none" />
+              <line x1="15" y1="30" x2="10" y2="30" stroke="#05BFDB" strokeWidth="1.5" />
+              <line x1="35" y1="30" x2="40" y2="30" stroke="#05BFDB" strokeWidth="1.5" />
+            </svg>
+          )}
+          {icon.type === 'code' && (
+            <span className="font-mono text-2xl md:text-4xl text-blueprint opacity-15 font-bold">
+              {icon.symbol}
+            </span>
+          )}
+          {icon.type === 'chip' && (
+            <svg className="w-8 h-8 md:w-10 md:h-10 opacity-20" viewBox="0 0 50 50" fill="none">
+              <rect x="15" y="15" width="20" height="20" stroke="#05BFDB" strokeWidth="1.5" rx="2" />
+              <rect x="20" y="20" width="10" height="10" stroke="#00FFCB" strokeWidth="1" rx="1" />
+              {[12, 18, 24, 30, 36].map(y => (
+                <g key={y}>
+                  <line x1="10" y1={y} x2="15" y2={y} stroke="#05BFDB" strokeWidth="1" />
+                  <line x1="35" y1={y} x2="40" y2={y} stroke="#05BFDB" strokeWidth="1" />
+                </g>
+              ))}
+            </svg>
+          )}
+          {icon.type === 'node' && (
+            <svg className="w-6 h-6 md:w-8 md:h-8 opacity-15" viewBox="0 0 40 40" fill="none">
+              <circle cx="20" cy="20" r="3" fill="#00FFCB" />
+              <circle cx="20" cy="20" r="8" stroke="#05BFDB" strokeWidth="1" opacity="0.5" />
+              <circle cx="20" cy="20" r="12" stroke="#05BFDB" strokeWidth="0.5" opacity="0.3" />
+            </svg>
+          )}
+        </motion.div>
+      ))}
+    </div>
+  );
+};
 
 const HeroBento = () => {
   const [displayText, setDisplayText] = useState("");
@@ -20,15 +105,33 @@ const HeroBento = () => {
   }, [currentIndex]);
 
   return (
-    <section className="relative w-full min-h-screen mx-auto pt-24 pb-16 blueprint-bg overflow-hidden">
+    <section className="relative w-full min-h-screen mx-auto flex items-center justify-center blueprint-bg overflow-hidden">
+      {/* Subtle Grid Background */}
+      <div className="absolute inset-0 opacity-[0.03] pointer-events-none">
+        {[...Array(20)].map((_, i) => (
+          <div
+            key={`v-${i}`}
+            className="absolute top-0 bottom-0 w-px bg-blueprint"
+            style={{ left: `${i * 5}%` }}
+          />
+        ))}
+        {[...Array(20)].map((_, i) => (
+          <div
+            key={`h-${i}`}
+            className="absolute left-0 right-0 h-px bg-blueprint"
+            style={{ top: `${i * 5}%` }}
+          />
+        ))}
+      </div>
+
       {/* Animated Background Gradient */}
       <motion.div
-        className="absolute inset-0 opacity-30"
+        className="absolute inset-0 opacity-20"
         animate={{
           background: [
-            "radial-gradient(circle at 20% 50%, rgba(5, 191, 219, 0.15) 0%, transparent 50%)",
-            "radial-gradient(circle at 80% 50%, rgba(0, 255, 203, 0.15) 0%, transparent 50%)",
-            "radial-gradient(circle at 20% 50%, rgba(5, 191, 219, 0.15) 0%, transparent 50%)",
+            "radial-gradient(circle at 20% 50%, rgba(5, 191, 219, 0.1) 0%, transparent 50%)",
+            "radial-gradient(circle at 80% 50%, rgba(0, 255, 203, 0.1) 0%, transparent 50%)",
+            "radial-gradient(circle at 20% 50%, rgba(5, 191, 219, 0.1) 0%, transparent 50%)",
           ],
         }}
         transition={{
@@ -38,271 +141,136 @@ const HeroBento = () => {
         }}
       />
 
-      {/* Floating Grid Lines */}
-      <div className="absolute inset-0 opacity-10 pointer-events-none">
-        {[...Array(6)].map((_, i) => (
-          <motion.div
-            key={`vertical-${i}`}
-            className="absolute top-0 bottom-0 w-px bg-blueprint"
-            style={{ left: `${(i + 1) * 16.66}%` }}
-            animate={{
-              opacity: [0.1, 0.3, 0.1],
-            }}
-            transition={{
-              duration: 3,
-              repeat: Infinity,
-              delay: i * 0.2,
-            }}
-          />
-        ))}
-        {[...Array(6)].map((_, i) => (
-          <motion.div
-            key={`horizontal-${i}`}
-            className="absolute left-0 right-0 h-px bg-terminal-green"
-            style={{ top: `${(i + 1) * 16.66}%` }}
-            animate={{
-              opacity: [0.1, 0.3, 0.1],
-            }}
-            transition={{
-              duration: 3,
-              repeat: Infinity,
-              delay: i * 0.2 + 0.5,
-            }}
-          />
-        ))}
-      </div>
+      {/* Floating Background Icons */}
+      <FloatingIcons />
 
-      <div className={`max-w-7xl mx-auto ${styles.paddingX} relative z-10`}>
-        {/* Bento Grid Layout */}
-        <div className="grid grid-cols-12 gap-4 md:gap-6">
-          {/* Main Hero Box - Large */}
+      {/* Main Content - Centered */}
+      <div className="relative z-10 max-w-4xl mx-auto px-6 md:px-12 text-center">
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.8 }}
+        >
+          {/* Terminal-style greeting */}
           <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.5 }}
-            whileHover={{ scale: 1.01, transition: { duration: 0.2 } }}
-            className="col-span-7 md:col-span-8 bento-box p-4 md:p-8 lg:p-12 min-h-[350px] md:min-h-[400px] flex flex-col justify-center scanline relative group"
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            transition={{ delay: 0.2 }}
+            className="font-mono text-terminal-green text-xs md:text-sm mb-8 flex items-center justify-center gap-2"
           >
-            {/* Hover Glow Effect */}
-            <div className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-300 pointer-events-none">
-              <div className="absolute inset-0 bg-gradient-to-r from-blueprint/5 via-terminal-green/5 to-blueprint/5 rounded-lg" />
-            </div>
-            {/* Terminal-style greeting */}
-            <div className="font-mono text-terminal-green text-xs md:text-sm mb-3 md:mb-6">
-              <span className="text-blueprint">jewel@portfolio</span>
-              <span className="text-secondary">:</span>
-              <span className="text-white">~</span>
-              <span className="text-terminal-green">$</span>{" "}
-              <span className="text-secondary">./introduce.sh</span>
-            </div>
-
-            {/* Name */}
-            <h1 className={`${styles.heroHeadText} mb-2 md:mb-4 text-3xl md:text-5xl lg:text-6xl font-bold`}>
-              Hi, I'm{" "}
-              <span className="bg-gradient-to-r from-blueprint-light via-terminal-green to-blueprint bg-clip-text text-transparent animate-blueprint-glow">
-                Jewel Nath
-              </span>
-            </h1>
-
-            {/* Typing effect subtitle */}
-            <div className="min-h-[60px] md:min-h-[80px]">
-              <p className={`${styles.heroSubText} flex items-center text-xs md:text-base lg:text-lg`}>
-                {displayText}
-                <span className="terminal-cursor ml-1"></span>
-              </p>
-            </div>
-
-            {/* Quick stats */}
-            <div className="mt-4 md:mt-8 grid grid-cols-2 md:grid-cols-3 gap-2 md:gap-6 relative z-10">
-              <motion.div
-                whileHover={{ scale: 1.05, y: -4 }}
-                transition={{ duration: 0.2 }}
-                className="blueprint-corners p-2 md:p-4 cursor-pointer group/stat"
-              >
-                <div className="font-mono text-blueprint-light text-lg md:text-2xl font-bold group-hover/stat:text-terminal-green transition-colors">
-                  1000+
-                </div>
-                <div className="font-mono text-secondary text-[8px] md:text-xs mt-1 uppercase tracking-wider">
-                  Students
-                </div>
-              </motion.div>
-              <motion.div
-                whileHover={{ scale: 1.05, y: -4 }}
-                transition={{ duration: 0.2 }}
-                className="blueprint-corners p-2 md:p-4 cursor-pointer group/stat"
-              >
-                <div className="font-mono text-blueprint-light text-lg md:text-2xl font-bold group-hover/stat:text-terminal-green transition-colors">
-                  3
-                </div>
-                <div className="font-mono text-secondary text-[8px] md:text-xs mt-1 uppercase tracking-wider">
-                  Robots
-                </div>
-              </motion.div>
-              <motion.div
-                whileHover={{ scale: 1.05, y: -4 }}
-                transition={{ duration: 0.2 }}
-                className="blueprint-corners p-2 md:p-4 col-span-2 md:col-span-1 cursor-pointer group/stat"
-              >
-                <div className="font-mono text-blueprint-light text-lg md:text-2xl font-bold group-hover/stat:text-terminal-green transition-colors">
-                  5+
-                </div>
-                <div className="font-mono text-secondary text-[8px] md:text-xs mt-1 uppercase tracking-wider">
-                  Years Exp
-                </div>
-              </motion.div>
-            </div>
+            <span className="text-blueprint">jewel@portfolio</span>
+            <span className="text-secondary">:</span>
+            <span className="text-white">~</span>
+            <span className="text-terminal-green">$</span>
+            <span className="text-secondary">./introduce.sh</span>
           </motion.div>
 
-          {/* Tech Orb Visualization */}
-          <motion.div
-            initial={{ opacity: 0, scale: 0.9 }}
-            animate={{ opacity: 1, scale: 1 }}
-            transition={{ duration: 0.5, delay: 0.2 }}
-            className="col-span-5 md:col-span-4 bento-box p-3 md:p-6 lg:p-8 min-h-[350px] md:min-h-[400px] flex items-center justify-center overflow-hidden relative"
-          >
-            <TechOrb />
-          </motion.div>
-
-          {/* About Box */}
-          <motion.div
+          {/* Name */}
+          <motion.h1
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.5, delay: 0.3 }}
-            whileHover={{ scale: 1.02, transition: { duration: 0.2 } }}
-            className="col-span-12 md:col-span-5 bento-box p-4 md:p-6 lg:p-8 group hover:shadow-lg hover:shadow-blueprint/10 transition-shadow"
+            transition={{ delay: 0.3, duration: 0.8 }}
+            className="text-4xl md:text-6xl lg:text-7xl font-bold mb-6"
           >
-            <div className="flex items-center gap-2 mb-4">
-              <span className="font-mono text-terminal-green">$</span>
-              <span className={styles.blueprintLabel}>About.md</span>
-            </div>
-            <p className="font-sans text-secondary text-sm md:text-base leading-relaxed">
-              A passionate Software Engineer (.NET) with a strong foundation in programming and robotics.
-              Currently working at{" "}
-              <span className="text-blueprint-light font-semibold">Orbitax</span>, where I build and enhance
-              .NET-based applications. Alongside my professional work, I actively explore robotics, IoT, and
-              automation projects — having successfully completed{" "}
-              <span className="text-blueprint-light font-semibold">three humanoid robotics prototypes</span>.
-              With deep enthusiasm for problem-solving and continuous learning, I aim to bridge the gap between
-              software development and intelligent robotics.
+            Hi, I'm{" "}
+            <span className="bg-gradient-to-r from-blueprint-light via-terminal-green to-blueprint bg-clip-text text-transparent">
+              Jewel Nath
+            </span>
+          </motion.h1>
+
+          {/* Typing effect subtitle */}
+          <motion.div
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            transition={{ delay: 0.5 }}
+            className="min-h-[40px] md:min-h-[50px] mb-12"
+          >
+            <p className="text-lg md:text-2xl text-secondary flex items-center justify-center">
+              {displayText}
+              <span className="terminal-cursor ml-1"></span>
             </p>
           </motion.div>
 
-          {/* Current Focus Box */}
+          {/* Quick Links */}
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.5, delay: 0.4 }}
-            whileHover={{ scale: 1.02, transition: { duration: 0.2 } }}
-            className="col-span-12 md:col-span-4 bento-box p-4 md:p-6 lg:p-8 terminal-window hover:shadow-lg hover:shadow-terminal-green/10 transition-shadow"
+            transition={{ delay: 0.7 }}
+            className="flex flex-wrap items-center justify-center gap-4 md:gap-6"
           >
-            <div className="terminal-header mb-4">
-              <div className="terminal-dot red" />
-              <div className="terminal-dot yellow" />
-              <div className="terminal-dot green" />
-            </div>
-            <div className="font-mono text-sm space-y-2">
-              <div className="text-secondary">
-                <span className="text-terminal-green">$</span> cat current_focus.txt
-              </div>
-              <div className="text-blueprint-light mt-3">
-                &gt; .NET Development
-              </div>
-              <div className="text-blueprint-light">
-                &gt; Robotics & IoT
-              </div>
-              <div className="text-blueprint-light">
-                &gt; ROS2 & Embedded Systems
-              </div>
-              <div className="text-blueprint-light">
-                &gt; Arduino & Raspberry Pi
-              </div>
-            </div>
+            <motion.a
+              href="https://github.com/devjewel01"
+              target="_blank"
+              rel="noopener noreferrer"
+              whileHover={{ scale: 1.05, y: -2 }}
+              className="px-6 py-3 bg-tertiary border border-blueprint/30 rounded-lg font-mono text-sm text-secondary hover:text-blueprint-light hover:border-blueprint transition-all cursor-pointer backdrop-blur-sm"
+            >
+              GitHub →
+            </motion.a>
+            <motion.a
+              href="https://linkedin.com/in/jewel-nath"
+              target="_blank"
+              rel="noopener noreferrer"
+              whileHover={{ scale: 1.05, y: -2 }}
+              className="px-6 py-3 bg-tertiary border border-blueprint/30 rounded-lg font-mono text-sm text-secondary hover:text-blueprint-light hover:border-blueprint transition-all cursor-pointer backdrop-blur-sm"
+            >
+              LinkedIn →
+            </motion.a>
+            <motion.a
+              href="#contact"
+              whileHover={{ scale: 1.05, y: -2 }}
+              className="px-6 py-3 bg-blueprint/10 border border-blueprint rounded-lg font-mono text-sm text-blueprint-light hover:bg-blueprint/20 transition-all cursor-pointer backdrop-blur-sm"
+            >
+              Contact Me →
+            </motion.a>
           </motion.div>
 
-          {/* Quick Links Box */}
+          {/* Quick Stats - Minimal */}
           <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.5, delay: 0.5 }}
-            whileHover={{ scale: 1.02, transition: { duration: 0.2 } }}
-            className="col-span-12 md:col-span-3 bento-box p-4 md:p-6 lg:p-8 hover:shadow-lg hover:shadow-blueprint/10 transition-shadow"
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            transition={{ delay: 0.9 }}
+            className="mt-16 flex flex-wrap items-center justify-center gap-8 md:gap-12"
           >
-            <div className={`${styles.blueprintLabel} mb-4`}>Quick Links</div>
-            <div className="space-y-3">
-              <motion.a
-                href="https://github.com/devjewel01"
-                target="_blank"
-                rel="noopener noreferrer"
-                whileHover={{ x: 4 }}
-                className="flex items-center gap-2 font-mono text-sm text-secondary hover:text-blueprint-light transition-colors group cursor-pointer"
-              >
-                <motion.span
-                  className="text-terminal-green"
-                  animate={{ x: [0, 3, 0] }}
-                  transition={{ duration: 1.5, repeat: Infinity }}
-                >
-                  →
-                </motion.span>
-                <span>GitHub</span>
-              </motion.a>
-              <motion.a
-                href="https://linkedin.com/in/jewel-nath"
-                target="_blank"
-                rel="noopener noreferrer"
-                whileHover={{ x: 4 }}
-                className="flex items-center gap-2 font-mono text-sm text-secondary hover:text-blueprint-light transition-colors group cursor-pointer"
-              >
-                <motion.span
-                  className="text-terminal-green"
-                  animate={{ x: [0, 3, 0] }}
-                  transition={{ duration: 1.5, repeat: Infinity, delay: 0.2 }}
-                >
-                  →
-                </motion.span>
-                <span>LinkedIn</span>
-              </motion.a>
-              <motion.a
-                href="#contact"
-                whileHover={{ x: 4 }}
-                className="flex items-center gap-2 font-mono text-sm text-secondary hover:text-blueprint-light transition-colors group cursor-pointer"
-              >
-                <motion.span
-                  className="text-terminal-green"
-                  animate={{ x: [0, 3, 0] }}
-                  transition={{ duration: 1.5, repeat: Infinity, delay: 0.4 }}
-                >
-                  →
-                </motion.span>
-                <span>Contact</span>
-              </motion.a>
+            <div className="text-center">
+              <div className="font-mono text-2xl md:text-3xl font-bold text-blueprint-light">1000+</div>
+              <div className="font-mono text-xs text-secondary mt-1 uppercase tracking-wider">Students</div>
+            </div>
+            <div className="text-center">
+              <div className="font-mono text-2xl md:text-3xl font-bold text-blueprint-light">3</div>
+              <div className="font-mono text-xs text-secondary mt-1 uppercase tracking-wider">Robots</div>
+            </div>
+            <div className="text-center">
+              <div className="font-mono text-2xl md:text-3xl font-bold text-blueprint-light">5+</div>
+              <div className="font-mono text-xs text-secondary mt-1 uppercase tracking-wider">Years Exp</div>
             </div>
           </motion.div>
-        </div>
-
-        {/* Scroll Indicator */}
-        <motion.div
-          initial={{ opacity: 0 }}
-          animate={{ opacity: 1 }}
-          transition={{ delay: 1, duration: 0.5 }}
-          className="absolute bottom-10 left-1/2 transform -translate-x-1/2"
-        >
-          <a href="#about">
-            <div className="w-[32px] h-[58px] rounded-3xl border-2 border-blueprint flex justify-center items-start p-2">
-              <motion.div
-                animate={{
-                  y: [0, 20, 0],
-                }}
-                transition={{
-                  duration: 1.5,
-                  repeat: Infinity,
-                  repeatType: "loop",
-                }}
-                className="w-2 h-2 rounded-full bg-blueprint mb-1"
-              />
-            </div>
-          </a>
         </motion.div>
       </div>
+
+      {/* Scroll Indicator */}
+      <motion.div
+        initial={{ opacity: 0 }}
+        animate={{ opacity: 1 }}
+        transition={{ delay: 1.2, duration: 0.5 }}
+        className="absolute bottom-10 left-1/2 transform -translate-x-1/2"
+      >
+        <a href="#about">
+          <div className="w-[28px] h-[50px] rounded-3xl border-2 border-blueprint/50 flex justify-center items-start p-2 hover:border-blueprint transition-colors">
+            <motion.div
+              animate={{
+                y: [0, 16, 0],
+              }}
+              transition={{
+                duration: 1.5,
+                repeat: Infinity,
+                repeatType: "loop",
+              }}
+              className="w-1.5 h-1.5 rounded-full bg-blueprint"
+            />
+          </div>
+        </a>
+      </motion.div>
     </section>
   );
 };
