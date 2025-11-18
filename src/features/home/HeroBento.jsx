@@ -1,7 +1,7 @@
 import { useState, useEffect } from "react";
 import { motion } from "framer-motion";
-import { styles } from "../styles";
-import RobotSVG from "./RobotSVG";
+import { styles } from "../../styles";
+import RobotSVG from "../../components/ui/RobotSVG";
 
 const HeroBento = () => {
   const [displayText, setDisplayText] = useState("");
@@ -23,16 +23,16 @@ const HeroBento = () => {
     <section className="relative w-full min-h-screen mx-auto pt-24 pb-16 blueprint-bg">
       <div className={`max-w-7xl mx-auto ${styles.paddingX}`}>
         {/* Bento Grid Layout */}
-        <div className="grid grid-cols-1 md:grid-cols-12 gap-4 md:gap-6">
+        <div className="grid grid-cols-12 gap-4 md:gap-6">
           {/* Main Hero Box - Large */}
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.5 }}
-            className="md:col-span-8 bento-box p-8 md:p-12 min-h-[400px] flex flex-col justify-center scanline"
+            className="col-span-7 md:col-span-8 bento-box p-4 md:p-8 lg:p-12 min-h-[350px] md:min-h-[400px] flex flex-col justify-center scanline"
           >
             {/* Terminal-style greeting */}
-            <div className="font-mono text-terminal-green text-sm mb-6">
+            <div className="font-mono text-terminal-green text-xs md:text-sm mb-3 md:mb-6">
               <span className="text-blueprint">jewel@portfolio</span>
               <span className="text-secondary">:</span>
               <span className="text-white">~</span>
@@ -41,43 +41,45 @@ const HeroBento = () => {
             </div>
 
             {/* Name */}
-            <h1 className={`${styles.heroHeadText} mb-4`}>
+            <h1 className={`${styles.heroHeadText} mb-2 md:mb-4 text-3xl md:text-5xl lg:text-6xl font-bold`}>
               Hi, I'm{" "}
-              <span className="blueprint-text">Jewel Nath</span>
+              <span className="bg-gradient-to-r from-blueprint-light via-terminal-green to-blueprint bg-clip-text text-transparent animate-blueprint-glow">
+                Jewel Nath
+              </span>
             </h1>
 
             {/* Typing effect subtitle */}
-            <div className="min-h-[80px]">
-              <p className={`${styles.heroSubText} flex items-center`}>
+            <div className="min-h-[60px] md:min-h-[80px]">
+              <p className={`${styles.heroSubText} flex items-center text-xs md:text-base lg:text-lg`}>
                 {displayText}
                 <span className="terminal-cursor ml-1"></span>
               </p>
             </div>
 
             {/* Quick stats */}
-            <div className="mt-8 grid grid-cols-2 md:grid-cols-3 gap-6">
-              <div className="blueprint-corners p-4">
-                <div className="font-mono text-blueprint-light text-2xl font-bold">
+            <div className="mt-4 md:mt-8 grid grid-cols-2 md:grid-cols-3 gap-2 md:gap-6">
+              <div className="blueprint-corners p-2 md:p-4">
+                <div className="font-mono text-blueprint-light text-lg md:text-2xl font-bold">
                   1000+
                 </div>
-                <div className="font-mono text-secondary text-xs mt-1 uppercase tracking-wider">
-                  Students Trained
+                <div className="font-mono text-secondary text-[8px] md:text-xs mt-1 uppercase tracking-wider">
+                  Students
                 </div>
               </div>
-              <div className="blueprint-corners p-4">
-                <div className="font-mono text-blueprint-light text-2xl font-bold">
+              <div className="blueprint-corners p-2 md:p-4">
+                <div className="font-mono text-blueprint-light text-lg md:text-2xl font-bold">
                   3
                 </div>
-                <div className="font-mono text-secondary text-xs mt-1 uppercase tracking-wider">
-                  Robots Built
+                <div className="font-mono text-secondary text-[8px] md:text-xs mt-1 uppercase tracking-wider">
+                  Robots
                 </div>
               </div>
-              <div className="blueprint-corners p-4 col-span-2 md:col-span-1">
-                <div className="font-mono text-blueprint-light text-2xl font-bold">
+              <div className="blueprint-corners p-2 md:p-4 col-span-2 md:col-span-1">
+                <div className="font-mono text-blueprint-light text-lg md:text-2xl font-bold">
                   5+
                 </div>
-                <div className="font-mono text-secondary text-xs mt-1 uppercase tracking-wider">
-                  Years Experience
+                <div className="font-mono text-secondary text-[8px] md:text-xs mt-1 uppercase tracking-wider">
+                  Years Exp
                 </div>
               </div>
             </div>
@@ -88,9 +90,9 @@ const HeroBento = () => {
             initial={{ opacity: 0, scale: 0.9 }}
             animate={{ opacity: 1, scale: 1 }}
             transition={{ duration: 0.5, delay: 0.2 }}
-            className="md:col-span-4 bento-box p-8 min-h-[400px] flex items-center justify-center"
+            className="col-span-5 md:col-span-4 bento-box p-3 md:p-6 lg:p-8 min-h-[350px] md:min-h-[400px] flex items-center justify-center"
           >
-            <RobotSVG className="max-w-full max-h-full" />
+            <RobotSVG className="w-full h-full max-w-[200px] md:max-w-full" />
           </motion.div>
 
           {/* About Box */}
@@ -98,7 +100,7 @@ const HeroBento = () => {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.5, delay: 0.3 }}
-            className="md:col-span-5 bento-box p-6 md:p-8"
+            className="col-span-12 md:col-span-5 bento-box p-4 md:p-6 lg:p-8"
           >
             <div className="flex items-center gap-2 mb-4">
               <span className="font-mono text-terminal-green">$</span>
@@ -121,7 +123,7 @@ const HeroBento = () => {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.5, delay: 0.4 }}
-            className="md:col-span-4 bento-box p-6 md:p-8 terminal-window"
+            className="col-span-12 md:col-span-4 bento-box p-4 md:p-6 lg:p-8 terminal-window"
           >
             <div className="terminal-header mb-4">
               <div className="terminal-dot red" />
@@ -152,7 +154,7 @@ const HeroBento = () => {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.5, delay: 0.5 }}
-            className="md:col-span-3 bento-box p-6 md:p-8"
+            className="col-span-12 md:col-span-3 bento-box p-4 md:p-6 lg:p-8"
           >
             <div className={`${styles.blueprintLabel} mb-4`}>Quick Links</div>
             <div className="space-y-3">
