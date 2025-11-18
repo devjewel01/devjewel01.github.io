@@ -8,84 +8,88 @@ import { github } from "../../assets";
 const ProjectCard = ({ index, name, description, tags, image, source_code_link }) => {
   return (
     <motion.div
-      variants={fadeIn("up", "spring", index * 0.3, 0.75)}
-      className="w-full"
+      variants={fadeIn("up", "spring", index * 0.2, 0.75)}
+      className="w-full group"
     >
-      <div className="bento-box p-6 hover:shadow-blueprint transition-all duration-300 group">
-        {/* Blueprint-style header */}
-        <div className="flex items-start justify-between mb-4">
-          <div className="flex-1">
-            {/* Project number */}
-            <div className="font-mono text-blueprint text-xs mb-2 uppercase tracking-[0.2em]">
-              Project #{String(index + 1).padStart(2, '0')}
+      <div className="relative h-full bg-tertiary/30 backdrop-blur-sm rounded-lg border border-white/5 overflow-hidden hover:border-white/20 transition-all duration-500">
+        {/* Gradient accent on hover */}
+        <div className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-500">
+          <div className="absolute top-0 right-0 w-32 h-32 bg-terminal-green/10 blur-3xl" />
+          <div className="absolute bottom-0 left-0 w-32 h-32 bg-blueprint/10 blur-3xl" />
+        </div>
+
+        {/* Content wrapper */}
+        <div className="relative p-6 flex flex-col h-full">
+          {/* Header section */}
+          <div className="flex items-start justify-between mb-5">
+            <div className="flex items-center gap-3">
+              {/* Index dot indicator */}
+              <div className="flex items-center gap-1">
+                <div className="w-1.5 h-1.5 rounded-full bg-terminal-green animate-pulse" />
+                <span className="font-mono text-xs text-secondary/50">
+                  {String(index + 1).padStart(2, '0')}
+                </span>
+              </div>
+
+              {/* Separator */}
+              <div className="w-px h-4 bg-white/10" />
             </div>
 
-            {/* Project name */}
-            <h3 className="font-mono font-bold text-white text-xl md:text-2xl mb-2">
-              {name}
-            </h3>
+            {/* GitHub link */}
+            <a
+              href={source_code_link}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="p-2 rounded-md bg-white/5 hover:bg-white/10 border border-white/10 hover:border-white/20 transition-all duration-300 group/link"
+              title="View Source"
+            >
+              <svg
+                className="w-4 h-4 text-secondary group-hover/link:text-white transition-colors"
+                fill="currentColor"
+                viewBox="0 0 24 24"
+              >
+                <path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z" />
+              </svg>
+            </a>
           </div>
 
-          {/* GitHub link button */}
-          <a
-            href={source_code_link}
-            target="_blank"
-            rel="noopener noreferrer"
-            className="flex-shrink-0 ml-4 w-10 h-10 rounded border border-blueprint/50 hover:border-blueprint hover:bg-blueprint/10 flex items-center justify-center transition-all group/btn"
-            title="View Source Code"
-          >
-            <svg
-              className="w-5 h-5 text-blueprint group-hover/btn:text-blueprint-light transition-colors"
-              fill="currentColor"
-              viewBox="0 0 24 24"
-            >
-              <path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z" />
-            </svg>
-          </a>
-        </div>
+          {/* Project image */}
+          <div className="relative w-full aspect-video mb-5 overflow-hidden rounded-md bg-black/20">
+            <img
+              src={image}
+              alt={name}
+              className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
+            />
 
-        {/* Project image with blueprint overlay */}
-        <div className="relative w-full h-48 md:h-56 mb-4 overflow-hidden rounded border border-blueprint/30 group-hover:border-blueprint/60 transition-colors">
-          <img
-            src={image}
-            alt={name}
-            className="w-full h-full object-cover"
-          />
-
-          {/* Blueprint grid overlay */}
-          <div className="absolute inset-0 bg-blueprint/5 group-hover:bg-blueprint/10 transition-all" />
-
-          {/* Corner brackets */}
-          <div className="absolute top-2 left-2 w-4 h-4 border-l-2 border-t-2 border-blueprint opacity-0 group-hover:opacity-100 transition-opacity" />
-          <div className="absolute top-2 right-2 w-4 h-4 border-r-2 border-t-2 border-blueprint opacity-0 group-hover:opacity-100 transition-opacity" />
-          <div className="absolute bottom-2 left-2 w-4 h-4 border-l-2 border-b-2 border-blueprint opacity-0 group-hover:opacity-100 transition-opacity" />
-          <div className="absolute bottom-2 right-2 w-4 h-4 border-r-2 border-b-2 border-blueprint opacity-0 group-hover:opacity-100 transition-opacity" />
-        </div>
-
-        {/* Description */}
-        <p className="font-sans text-secondary text-sm leading-relaxed mb-4 min-h-[80px]">
-          {description}
-        </p>
-
-        {/* Technology tags - terminal style */}
-        <div className="flex flex-wrap gap-2">
-          {tags.map((tag, tagIndex) => (
-            <div
-              key={`${name}-${tag.name}-${tagIndex}`}
-              className="font-mono text-xs px-3 py-1 border border-blueprint/40 text-blueprint rounded-sm hover:bg-blueprint/10 transition-colors"
-            >
-              #{tag.name}
-            </div>
-          ))}
-        </div>
-
-        {/* Measurement line decoration (blueprint style) */}
-        <div className="mt-4 pt-4 border-t border-blueprint/20">
-          <div className="flex items-center gap-2 font-mono text-xs text-blueprint/50">
-            <span>⎯⎯⎯</span>
-            <span className="uppercase tracking-wider">Technical Specs</span>
-            <span className="flex-1 border-b border-dashed border-blueprint/20"></span>
+            {/* Subtle overlay */}
+            <div className="absolute inset-0 bg-gradient-to-t from-tertiary/50 to-transparent opacity-60" />
           </div>
+
+          {/* Project title */}
+          <h3 className="font-sans text-xl md:text-2xl font-bold text-white mb-3 group-hover:text-terminal-green transition-colors duration-300">
+            {name}
+          </h3>
+
+          {/* Description */}
+          <p className="font-sans text-secondary/80 text-sm leading-relaxed mb-5 flex-grow">
+            {description}
+          </p>
+
+          {/* Technology tags */}
+          <div className="flex flex-wrap gap-2 mt-auto">
+            {tags.map((tag, tagIndex) => (
+              <span
+                key={`${name}-${tag.name}-${tagIndex}`}
+                className="inline-flex items-center gap-1 px-2.5 py-1 rounded-full bg-white/5 border border-white/10 text-xs font-mono text-secondary/70 hover:bg-white/10 hover:text-white transition-all duration-300"
+              >
+                <span className="w-1 h-1 rounded-full bg-terminal-green/60" />
+                {tag.name}
+              </span>
+            ))}
+          </div>
+
+          {/* Bottom accent line */}
+          <div className="absolute bottom-0 left-0 right-0 h-[2px] bg-gradient-to-r from-transparent via-terminal-green/50 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
         </div>
       </div>
     </motion.div>
@@ -117,27 +121,6 @@ const ProjectsBlueprint = () => {
           <ProjectCard key={`project-${index}`} index={index} {...project} />
         ))}
       </div>
-
-      {/* Terminal style footer */}
-      <motion.div
-        variants={fadeIn("up", "spring", projects.length * 0.3, 0.75)}
-        className="mt-12 terminal-window p-4"
-      >
-        <div className="terminal-header mb-3">
-          <div className="terminal-dot red" />
-          <div className="terminal-dot yellow" />
-          <div className="terminal-dot green" />
-        </div>
-        <div className="font-mono text-sm text-secondary px-4 pb-2">
-          <span className="text-terminal-green">$</span> ls -la projects/
-          <br />
-          <span className="text-blueprint">total {projects.length} projects</span>
-          <br />
-          <span className="text-secondary/50">
-            All projects are open source and available on GitHub
-          </span>
-        </div>
-      </motion.div>
     </>
   );
 };
