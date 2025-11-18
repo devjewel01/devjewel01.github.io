@@ -1,7 +1,7 @@
 import { useState, useEffect } from "react";
 import { motion } from "framer-motion";
 import { styles } from "../../styles";
-import RobotSVG from "../../components/ui/RobotSVG";
+import TechOrb from "../../components/ui/TechOrb";
 
 const HeroBento = () => {
   const [displayText, setDisplayText] = useState("");
@@ -20,8 +20,59 @@ const HeroBento = () => {
   }, [currentIndex]);
 
   return (
-    <section className="relative w-full min-h-screen mx-auto pt-24 pb-16 blueprint-bg">
-      <div className={`max-w-7xl mx-auto ${styles.paddingX}`}>
+    <section className="relative w-full min-h-screen mx-auto pt-24 pb-16 blueprint-bg overflow-hidden">
+      {/* Animated Background Gradient */}
+      <motion.div
+        className="absolute inset-0 opacity-30"
+        animate={{
+          background: [
+            "radial-gradient(circle at 20% 50%, rgba(5, 191, 219, 0.15) 0%, transparent 50%)",
+            "radial-gradient(circle at 80% 50%, rgba(0, 255, 203, 0.15) 0%, transparent 50%)",
+            "radial-gradient(circle at 20% 50%, rgba(5, 191, 219, 0.15) 0%, transparent 50%)",
+          ],
+        }}
+        transition={{
+          duration: 10,
+          repeat: Infinity,
+          ease: "easeInOut",
+        }}
+      />
+
+      {/* Floating Grid Lines */}
+      <div className="absolute inset-0 opacity-10 pointer-events-none">
+        {[...Array(6)].map((_, i) => (
+          <motion.div
+            key={`vertical-${i}`}
+            className="absolute top-0 bottom-0 w-px bg-blueprint"
+            style={{ left: `${(i + 1) * 16.66}%` }}
+            animate={{
+              opacity: [0.1, 0.3, 0.1],
+            }}
+            transition={{
+              duration: 3,
+              repeat: Infinity,
+              delay: i * 0.2,
+            }}
+          />
+        ))}
+        {[...Array(6)].map((_, i) => (
+          <motion.div
+            key={`horizontal-${i}`}
+            className="absolute left-0 right-0 h-px bg-terminal-green"
+            style={{ top: `${(i + 1) * 16.66}%` }}
+            animate={{
+              opacity: [0.1, 0.3, 0.1],
+            }}
+            transition={{
+              duration: 3,
+              repeat: Infinity,
+              delay: i * 0.2 + 0.5,
+            }}
+          />
+        ))}
+      </div>
+
+      <div className={`max-w-7xl mx-auto ${styles.paddingX} relative z-10`}>
         {/* Bento Grid Layout */}
         <div className="grid grid-cols-12 gap-4 md:gap-6">
           {/* Main Hero Box - Large */}
@@ -29,8 +80,13 @@ const HeroBento = () => {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.5 }}
-            className="col-span-7 md:col-span-8 bento-box p-4 md:p-8 lg:p-12 min-h-[350px] md:min-h-[400px] flex flex-col justify-center scanline"
+            whileHover={{ scale: 1.01, transition: { duration: 0.2 } }}
+            className="col-span-7 md:col-span-8 bento-box p-4 md:p-8 lg:p-12 min-h-[350px] md:min-h-[400px] flex flex-col justify-center scanline relative group"
           >
+            {/* Hover Glow Effect */}
+            <div className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-300 pointer-events-none">
+              <div className="absolute inset-0 bg-gradient-to-r from-blueprint/5 via-terminal-green/5 to-blueprint/5 rounded-lg" />
+            </div>
             {/* Terminal-style greeting */}
             <div className="font-mono text-terminal-green text-xs md:text-sm mb-3 md:mb-6">
               <span className="text-blueprint">jewel@portfolio</span>
@@ -57,42 +113,54 @@ const HeroBento = () => {
             </div>
 
             {/* Quick stats */}
-            <div className="mt-4 md:mt-8 grid grid-cols-2 md:grid-cols-3 gap-2 md:gap-6">
-              <div className="blueprint-corners p-2 md:p-4">
-                <div className="font-mono text-blueprint-light text-lg md:text-2xl font-bold">
+            <div className="mt-4 md:mt-8 grid grid-cols-2 md:grid-cols-3 gap-2 md:gap-6 relative z-10">
+              <motion.div
+                whileHover={{ scale: 1.05, y: -4 }}
+                transition={{ duration: 0.2 }}
+                className="blueprint-corners p-2 md:p-4 cursor-pointer group/stat"
+              >
+                <div className="font-mono text-blueprint-light text-lg md:text-2xl font-bold group-hover/stat:text-terminal-green transition-colors">
                   1000+
                 </div>
                 <div className="font-mono text-secondary text-[8px] md:text-xs mt-1 uppercase tracking-wider">
                   Students
                 </div>
-              </div>
-              <div className="blueprint-corners p-2 md:p-4">
-                <div className="font-mono text-blueprint-light text-lg md:text-2xl font-bold">
+              </motion.div>
+              <motion.div
+                whileHover={{ scale: 1.05, y: -4 }}
+                transition={{ duration: 0.2 }}
+                className="blueprint-corners p-2 md:p-4 cursor-pointer group/stat"
+              >
+                <div className="font-mono text-blueprint-light text-lg md:text-2xl font-bold group-hover/stat:text-terminal-green transition-colors">
                   3
                 </div>
                 <div className="font-mono text-secondary text-[8px] md:text-xs mt-1 uppercase tracking-wider">
                   Robots
                 </div>
-              </div>
-              <div className="blueprint-corners p-2 md:p-4 col-span-2 md:col-span-1">
-                <div className="font-mono text-blueprint-light text-lg md:text-2xl font-bold">
+              </motion.div>
+              <motion.div
+                whileHover={{ scale: 1.05, y: -4 }}
+                transition={{ duration: 0.2 }}
+                className="blueprint-corners p-2 md:p-4 col-span-2 md:col-span-1 cursor-pointer group/stat"
+              >
+                <div className="font-mono text-blueprint-light text-lg md:text-2xl font-bold group-hover/stat:text-terminal-green transition-colors">
                   5+
                 </div>
                 <div className="font-mono text-secondary text-[8px] md:text-xs mt-1 uppercase tracking-wider">
                   Years Exp
                 </div>
-              </div>
+              </motion.div>
             </div>
           </motion.div>
 
-          {/* Robot SVG Box */}
+          {/* Tech Orb Visualization */}
           <motion.div
             initial={{ opacity: 0, scale: 0.9 }}
             animate={{ opacity: 1, scale: 1 }}
             transition={{ duration: 0.5, delay: 0.2 }}
-            className="col-span-5 md:col-span-4 bento-box p-3 md:p-6 lg:p-8 min-h-[350px] md:min-h-[400px] flex items-center justify-center"
+            className="col-span-5 md:col-span-4 bento-box p-3 md:p-6 lg:p-8 min-h-[350px] md:min-h-[400px] flex items-center justify-center overflow-hidden relative"
           >
-            <RobotSVG className="w-full h-full max-w-[200px] md:max-w-full" />
+            <TechOrb />
           </motion.div>
 
           {/* About Box */}
@@ -100,7 +168,8 @@ const HeroBento = () => {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.5, delay: 0.3 }}
-            className="col-span-12 md:col-span-5 bento-box p-4 md:p-6 lg:p-8"
+            whileHover={{ scale: 1.02, transition: { duration: 0.2 } }}
+            className="col-span-12 md:col-span-5 bento-box p-4 md:p-6 lg:p-8 group hover:shadow-lg hover:shadow-blueprint/10 transition-shadow"
           >
             <div className="flex items-center gap-2 mb-4">
               <span className="font-mono text-terminal-green">$</span>
@@ -123,7 +192,8 @@ const HeroBento = () => {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.5, delay: 0.4 }}
-            className="col-span-12 md:col-span-4 bento-box p-4 md:p-6 lg:p-8 terminal-window"
+            whileHover={{ scale: 1.02, transition: { duration: 0.2 } }}
+            className="col-span-12 md:col-span-4 bento-box p-4 md:p-6 lg:p-8 terminal-window hover:shadow-lg hover:shadow-terminal-green/10 transition-shadow"
           >
             <div className="terminal-header mb-4">
               <div className="terminal-dot red" />
@@ -154,35 +224,57 @@ const HeroBento = () => {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.5, delay: 0.5 }}
-            className="col-span-12 md:col-span-3 bento-box p-4 md:p-6 lg:p-8"
+            whileHover={{ scale: 1.02, transition: { duration: 0.2 } }}
+            className="col-span-12 md:col-span-3 bento-box p-4 md:p-6 lg:p-8 hover:shadow-lg hover:shadow-blueprint/10 transition-shadow"
           >
             <div className={`${styles.blueprintLabel} mb-4`}>Quick Links</div>
             <div className="space-y-3">
-              <a
+              <motion.a
                 href="https://github.com/devjewel01"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="flex items-center gap-2 font-mono text-sm text-secondary hover:text-blueprint-light transition-colors group"
+                whileHover={{ x: 4 }}
+                className="flex items-center gap-2 font-mono text-sm text-secondary hover:text-blueprint-light transition-colors group cursor-pointer"
               >
-                <span className="text-terminal-green">→</span>
+                <motion.span
+                  className="text-terminal-green"
+                  animate={{ x: [0, 3, 0] }}
+                  transition={{ duration: 1.5, repeat: Infinity }}
+                >
+                  →
+                </motion.span>
                 <span>GitHub</span>
-              </a>
-              <a
+              </motion.a>
+              <motion.a
                 href="https://linkedin.com/in/jewel-nath"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="flex items-center gap-2 font-mono text-sm text-secondary hover:text-blueprint-light transition-colors group"
+                whileHover={{ x: 4 }}
+                className="flex items-center gap-2 font-mono text-sm text-secondary hover:text-blueprint-light transition-colors group cursor-pointer"
               >
-                <span className="text-terminal-green">→</span>
+                <motion.span
+                  className="text-terminal-green"
+                  animate={{ x: [0, 3, 0] }}
+                  transition={{ duration: 1.5, repeat: Infinity, delay: 0.2 }}
+                >
+                  →
+                </motion.span>
                 <span>LinkedIn</span>
-              </a>
-              <a
+              </motion.a>
+              <motion.a
                 href="#contact"
-                className="flex items-center gap-2 font-mono text-sm text-secondary hover:text-blueprint-light transition-colors group"
+                whileHover={{ x: 4 }}
+                className="flex items-center gap-2 font-mono text-sm text-secondary hover:text-blueprint-light transition-colors group cursor-pointer"
               >
-                <span className="text-terminal-green">→</span>
+                <motion.span
+                  className="text-terminal-green"
+                  animate={{ x: [0, 3, 0] }}
+                  transition={{ duration: 1.5, repeat: Infinity, delay: 0.4 }}
+                >
+                  →
+                </motion.span>
                 <span>Contact</span>
-              </a>
+              </motion.a>
             </div>
           </motion.div>
         </div>
