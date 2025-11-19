@@ -20,7 +20,7 @@ const TechTerminal = () => {
     "robotics": {
       label: "Robotics & Automation",
       techs: ["ROS2", "Python", "Playwright", "Linux/Ubuntu", "C++"],
-      color: "text-[#00FFCB]"
+      color: "text-orange-500"
     },
     "devops": {
       label: "DevOps & Tools",
@@ -30,7 +30,7 @@ const TechTerminal = () => {
     "learning": {
       label: "AI & Learning",
       techs: ["LLM", "AI Agents", "MCP", "RAG", "Prompt Engineering"],
-      color: "text-yellow-400"
+      color: "text-pink-500"
     }
   };
 

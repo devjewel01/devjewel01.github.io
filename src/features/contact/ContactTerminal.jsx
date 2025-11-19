@@ -4,6 +4,7 @@ import emailjs from "@emailjs/browser";
 import { styles } from "../../styles";
 import { SectionWrapper } from "../../hoc";
 import { slideIn, fadeIn } from "../../utils/motion";
+import { FaGithub, FaLinkedin, FaEnvelope, FaMapMarkerAlt } from "react-icons/fa";
 
 const ContactTerminal = () => {
   const formRef = useRef();
@@ -96,8 +97,8 @@ const ContactTerminal = () => {
 
         <div className="mt-8 space-y-6">
           <div className="glass-card p-6">
-            <div className="text-blueprint text-sm mb-3 font-semibold uppercase tracking-wider">
-              Email
+            <div className="text-blueprint text-sm mb-3 font-semibold uppercase tracking-wider flex items-center gap-2">
+              <FaEnvelope className="text-lg" /> Email
             </div>
             <a
               href="mailto:jewelnath.me@gmail.com"
@@ -108,8 +109,8 @@ const ContactTerminal = () => {
           </div>
 
           <div className="glass-card p-6">
-            <div className="text-blueprint text-sm mb-3 font-semibold uppercase tracking-wider">
-              Social Links
+            <div className="text-blueprint text-sm mb-3 font-semibold uppercase tracking-wider flex items-center gap-2">
+              <FaGithub className="text-lg" /> Social Links
             </div>
             <div className="space-y-3">
               <a
@@ -118,7 +119,7 @@ const ContactTerminal = () => {
                 rel="noopener noreferrer"
                 className="flex items-center gap-3 text-secondary hover:text-white transition-colors"
               >
-                <span className="text-terminal-green">→</span>
+                <FaGithub className="text-terminal-green text-xl" />
                 <span>github.com/devjewel01</span>
               </a>
               <a
@@ -127,15 +128,15 @@ const ContactTerminal = () => {
                 rel="noopener noreferrer"
                 className="flex items-center gap-3 text-secondary hover:text-white transition-colors"
               >
-                <span className="text-terminal-green">→</span>
+                <FaLinkedin className="text-terminal-green text-xl" />
                 <span>linkedin.com/in/jewel-nath</span>
               </a>
             </div>
           </div>
 
           <div className="glass-card p-6">
-            <div className="text-blueprint text-sm mb-3 font-semibold uppercase tracking-wider">
-              Location
+            <div className="text-blueprint text-sm mb-3 font-semibold uppercase tracking-wider flex items-center gap-2">
+              <FaMapMarkerAlt className="text-lg" /> Location
             </div>
             <div className="text-secondary">
               Dhaka, Bangladesh
@@ -215,10 +216,9 @@ const ContactTerminal = () => {
               disabled={loading}
               className={`
                 w-full text-sm py-3 rounded-lg transition-all font-semibold
-                ${
-                  loading
-                    ? "glass-light text-blueprint/60 cursor-not-allowed"
-                    : "glass-button text-blueprint hover:shadow-blueprint"
+                ${loading
+                  ? "glass-light text-blueprint/60 cursor-not-allowed"
+                  : "glass-button text-blueprint hover:shadow-blueprint"
                 }
               `}
             >

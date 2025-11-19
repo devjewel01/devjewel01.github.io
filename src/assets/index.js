@@ -38,8 +38,10 @@ import cpp from "./tech/cpp.png";
 import python from "./tech/python-logo.svg"
 import vscode from "./tech/vs-code.png"
 
-import quanta_robotics from "./company/quanta-robotics-logo.png";
-import SoRC from "./company/SoRC.jpg";
+import quanta from "./company/quanta_new.png";
+import sorc from "./company/sorc_new.png";
+import orbitax from "./company/orbitax_logo.jpg";
+import roboict from "./company/roboict_logo.jpg";
 
 export {
   logo,
@@ -71,8 +73,10 @@ export {
   python,
   vscode,
 
-  quanta_robotics,
-  SoRC,
+  quanta,
+  sorc,
+  orbitax,
+  roboict,
 
   niko,
   blueberry,
