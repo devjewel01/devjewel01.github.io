@@ -1,25 +1,23 @@
 import { motion } from "framer-motion";
 import { styles } from "../../styles";
-import { technologies } from "../../constants";
 import { SectionWrapper } from "../../hoc";
 import { textVariant, fadeIn } from "../../utils/motion";
 
 const TechTerminal = () => {
-  // Group technologies by category - Updated to reflect current job and learning
   const techCategories = {
     "backend": {
       label: "Backend Development",
-      techs: [".NET", "C#", "MongoDB", "Python", "Node.js"],
+      techs: [".NET", "C#", "MongoDB", "Python"],
       color: "text-terminal-green"
     },
     "frontend": {
       label: "Frontend Development",
-      techs: ["Angular", "React", "JavaScript", "TypeScript"],
+      techs: ["Angular", "JavaScript", "TypeScript"],
       color: "text-blueprint-light"
     },
     "robotics": {
       label: "Robotics & Automation",
-      techs: ["ROS2", "Python", "Playwright", "Linux/Ubuntu", "C++"],
+      techs: ["ROS2", "Python", "C++", "Linux", "Arduino", "ESP", "Raspberry PI", "Tinkercad", "EasyEDA"],
       color: "text-orange-500"
     },
     "devops": {
@@ -29,7 +27,7 @@ const TechTerminal = () => {
     },
     "learning": {
       label: "AI & Learning",
-      techs: ["LLM", "AI Agents", "MCP", "RAG", "Prompt Engineering"],
+      techs: ["Prompt Engineering", "LLM", "AI Agents", "RAG", "MCP"],
       color: "text-pink-500"
     }
   };
